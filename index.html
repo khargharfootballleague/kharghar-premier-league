@@ -23,6 +23,7 @@
 
     <nav class="bg-white text-gray-900 py-3 px-6 sticky top-0 z-50 flex justify-between items-center shadow-md">
 	
+	
     <div class="flex items-center gap-3">
         <img src="kpllogo.jpg" alt="KPL Logo" class="h-12 w-auto">
         <div class="text-xl font-black tracking-tighter leading-none hidden sm:block uppercase">
@@ -67,19 +68,57 @@
             <i class="fab fa-youtube text-xl"></i>
         </a>
     </div>
+
 </nav>
+
+<div class="bg-[#0D1B3E] border-y border-white/10 py-2 overflow-hidden whitespace-nowrap sticky top-[72px] z-40">
+        <div class="flex items-center">
+            <div class="bg-red-600 text-white text-[10px] font-bold px-3 py-1 ml-6 rounded flex items-center gap-2 animate-pulse z-10">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                LIVE UPDATES
+            </div>
+            <div class="inline-block animate-marquee hover:pause whitespace-nowrap text-xs font-bold text-gray-300 uppercase tracking-widest px-4">
+                <span class="mx-8 underline decoration-[#2D9F94] decoration-2 underline-offset-4">Season 04 Registrations are officially closed!</span>
+                <span class="mx-8">• New Player registration closed in 1 day!</span>
+                <span class="mx-8">• New Player trials to be held in May 2026!</span>
+                <span class="mx-8">• Season 4 Player Auction to be held in June 2026!.</span>
+                <span class="mx-8">• Season 4 to start in July 2026.</span>
+            </div>
+        </div>
+    </div>
+	
+	<style>
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee 30s linear infinite;
+    }
+    .hover\:pause:hover {
+        animation-play-state: paused;
+    }
+</style>
 
     <header class="hero-gradient h-[60vh] flex items-center justify-center text-center text-white px-4">
         <div class="max-w-4xl">
             <img src="kpllogo.jpg" alt="KPL Logo" class="h-32 w-auto mx-auto mb-6 drop-shadow-2xl rounded-full p-2 bg-white/10 backdrop-blur-sm"> <h2 class="text-sm md:text-xl font-bold text-teal-400 uppercase tracking-[0.3em] mb-4">Season 04 Coming Soon</h2>
             <h1 class="text-4xl md:text-6xl font-black uppercase italic mb-8">Elevating Football in Navi Mumbai</h1>
             <a href="season4.html" class="bg-[#2D9F94] text-white px-10 py-4 rounded-full font-black uppercase hover:scale-105 transition-all shadow-lg">
-    Latest Updates
+    Season 4 Updates
 </a>
         </div>
+		
     </header>
 	
-	<section id="clubs" class="py-20 bg-gray-50 text-gray-900">
+	<section id="clubs" class="py-20 bg-gray-50 text-gray-900">	
+
+	
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-4xl font-black uppercase italic tracking-tighter">The Elite Six</h2>
