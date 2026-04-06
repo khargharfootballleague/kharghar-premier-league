@@ -80,11 +80,19 @@
                 </span>
                 LIVE UPDATES
             </div>
-            <div class="inline-block animate-marquee hover:pause whitespace-nowrap text-xs font-bold text-gray-300 uppercase tracking-widest px-4">
+            <div class="flex animate-marquee hover:pause whitespace-nowrap text-xs font-bold text-gray-300 uppercase tracking-widest">
+            <div class="flex items-center">
                 <span class="mx-8 underline decoration-[#2D9F94] decoration-2 underline-offset-4">Season 04 Registrations are officially closed!</span>
                 <span class="mx-8">• New Player registration closed in 1 day!</span>
                 <span class="mx-8">• New Player trials to be held in May 2026!</span>
-                <span class="mx-8">• Season 4 Player Auction to be held in June 2026!.</span>
+                <span class="mx-8">• Season 4 Player Auction to be held in June 2026!</span>
+                <span class="mx-8">• Season 4 to start in July 2026.</span>
+            </div>
+			<div class="flex items-center">
+                <span class="mx-8 underline decoration-[#2D9F94] decoration-2 underline-offset-4">Season 04 Registrations are officially closed!</span>
+                <span class="mx-8">• New Player registration closed in 1 day!</span>
+                <span class="mx-8">• New Player trials to be held in May 2026!</span>
+                <span class="mx-8">• Season 4 Player Auction to be held in June 2026!</span>
                 <span class="mx-8">• Season 4 to start in July 2026.</span>
             </div>
         </div>
@@ -93,12 +101,10 @@
 	<style>
     @keyframes marquee {
         0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        100% { transform: translateX(-50%); } /* Moves only half-way because the content is duplicated */
     }
     .animate-marquee {
-        display: inline-block;
-        padding-left: 100%;
-        animation: marquee 30s linear infinite;
+        animation: marquee 60s linear infinite; /* Slowed down to 60s to make it readable */
     }
     .hover\:pause:hover {
         animation-play-state: paused;
