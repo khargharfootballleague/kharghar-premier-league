@@ -3,67 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kharghar Premier League | Official Website</title>
+    <title>Kharghar Premier League | Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; }
+        .bg-kpl-teal { background-color: #2D9F94; }
+        .text-kpl-teal { color: #2D9F94; }
+        .hero-gradient { 
+            background: linear-gradient(rgba(13, 27, 62, 0.85), rgba(13, 27, 62, 0.85)), 
+            url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80'); 
+            background-size: cover; 
+            background-position: center; 
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-    <nav class="bg-black text-white py-4 px-6 sticky top-0 z-50 flex justify-between items-center shadow-xl">
-        <div class="text-2xl font-black tracking-tighter">KHARGHAR <span class="text-yellow-500">PL</span></div>
-        <div class="hidden md:flex space-x-8 font-semibold uppercase text-sm">
-            <a href="#home" class="hover:text-yellow-500 transition">Home</a>
-            <a href="#standings" class="hover:text-yellow-500 transition">Standings</a>
-            <a href="#fixtures" class="hover:text-yellow-500 transition">Fixtures</a>
-            <a href="https://www.instagram.com/khargharpremierleague/" target="_blank" class="text-yellow-500"><i class="fab fa-instagram text-xl"></i></a>
+    <nav class="bg-white text-gray-900 py-3 px-6 sticky top-0 z-50 flex justify-between items-center shadow-md">
+	
+    <div class="flex items-center gap-3">
+        <img src="kpllogo.jpg" alt="KPL Logo" class="h-12 w-auto">
+        <div class="text-xl font-black tracking-tighter leading-none hidden sm:block uppercase">
+            KHARGHAR <br><span class="text-[#2D9F94]">PREMIER LEAGUE</span>
         </div>
-    </nav>
+    </div>
+    
+    <div class="flex space-x-6 font-semibold uppercase text-xs tracking-wider items-center">
+        <a href="index.html" class="hover:text-[#2D9F94] transition">Home</a>
+        
+        <div class="relative group">
+            <button class="hover:text-[#2D9F94] transition flex items-center gap-1 pb-4 mt-4">
+                History <i class="fas fa-chevron-down text-[10px]"></i>
+            </button>
+            
+            <div class="absolute hidden group-hover:block bg-white border border-gray-200 mt-0 py-2 w-56 rounded-lg shadow-2xl right-0 z-[100]">
 
-    <header id="home" class="hero-gradient h-[70vh] flex items-center justify-center text-center text-white px-4">
+                <a href="season3.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
+                    <span class="block font-bold">Season 3</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
+                </a>
+                <a href="season2.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
+                    <span class="block font-bold">Season 2</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Atletico De Kharghar</span>
+                </a>
+                <a href="season1.html" class="block px-4 py-3 hover:bg-gray-50">
+                    <span class="block font-bold">Season 1</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
+                </a>
+            </div>
+        </div>
+		
+		<a href="clubs.html" class="hover:text-[#2D9F94] transition">Clubs</a>
+
+        <a href="https://www.instagram.com/khargharpremierleague/" target="_blank" class="text-pink-600">
+            <i class="fab fa-instagram text-xl"></i>
+        </a>
+		
+		<a href="https://www.youtube.com/@KhargharPremierLeague" target="_blank" class="text-pink-600">
+            <i class="fab fa-youtube text-xl"></i>
+        </a>
+    </div>
+</nav>
+
+    <header class="hero-gradient h-[60vh] flex items-center justify-center text-center text-white px-4">
         <div class="max-w-4xl">
-            <h2 class="text-sm md:text-xl font-bold text-yellow-500 uppercase tracking-[0.3em] mb-4">Season 03 is Live</h2>
-            <h1 class="text-5xl md:text-7xl font-black uppercase italic mb-6">Where Passion Meets the Pitch</h1>
-            <a href="#standings" class="bg-yellow-500 text-black px-8 py-3 rounded-full font-bold uppercase hover:bg-white transition-all">View Table</a>
+            <img src="kpllogo.jpg" alt="KPL Logo" class="h-32 w-auto mx-auto mb-6 drop-shadow-2xl rounded-full p-2 bg-white/10 backdrop-blur-sm"> <h2 class="text-sm md:text-xl font-bold text-teal-400 uppercase tracking-[0.3em] mb-4">Season 04 Coming Soon</h2>
+            <h1 class="text-4xl md:text-6xl font-black uppercase italic mb-8">Elevating Football in Navi Mumbai</h1>
+            <a href="#standings" class="bg-kpl-teal text-white px-10 py-4 rounded-full font-black uppercase hover:scale-105 transition-all shadow-lg">Latest Updates</a>
         </div>
     </header>
-
-    <section id="standings" class="py-20 px-4 max-w-5xl mx-auto">
-        <div class="flex items-center space-x-4 mb-10">
-            <div class="h-12 w-2 bg-yellow-500"></div>
-            <h3 class="text-4xl font-black uppercase">League Standings</h3>
+	
+	<section id="clubs" class="py-20 bg-gray-50 text-gray-900">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-black uppercase italic tracking-tighter">The Elite Six</h2>
+            <p class="text-gray-500 mt-2 font-medium">The heartbeat of the Kharghar Premier League</p>
         </div>
         
-        <div class="bg-white rounded-xl shadow-2xl overflow-hidden">
-            <table class="w-full text-left">
-                <thead class="bg-gray-100 border-b">
-                    <tr>
-                        <th class="p-4 font-bold">Pos</th>
-                        <th class="p-4 font-bold">Team Name</th>
-                        <th class="p-4 font-bold text-center">P</th>
-                        <th class="p-4 font-bold text-center">W</th>
-                        <th class="p-4 font-bold text-center">GD</th>
-                        <th class="p-4 font-bold text-center">Pts</th>
-                    </tr>
-                </thead>
-                <tbody class="divide-y">
-                    <tr class="hover:bg-yellow-50 transition">
-                        <td class="p-4 font-bold">1</td>
-                        <td class="p-4 flex items-center"><span class="w-8 h-8 bg-blue-600 rounded-full mr-3"></span> Falcons FC</td>
-                        <td class="p-4 text-center">5</td>
-                        <td class="p-4 text-center">4</td>
-                        <td class="p-4 text-center text-green-600 font-bold">+8</td>
-                        <td class="p-4 text-center font-black">12</td>
-                    </tr>
-                    <tr class="hover:bg-yellow-50 transition">
-                        <td class="p-4 font-bold">2</td>
-                        <td class="p-4 flex items-center"><span class="w-8 h-8 bg-red-600 rounded-full mr-3"></span> Wolves United</td>
-                        <td class="p-4 text-center">5</td>
-                        <td class="p-4 text-center">3</td>
-                        <td class="p-4 text-center text-green-600 font-bold">+2</td>
-                        <td class="p-4 text-center font-black">9</td>
-                    </tr>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-[#2D9F94] hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+                <div class="relative">
+                    <img src="REAL KHARGHAR F.C (Logo).png" alt="Real Kharghar FC" class="h-32 w-32 object-contain mb-6">
+                    <span class="absolute -top-2 -right-4 bg-yellow-500 text-black text-[10px] font-black px-2 py-1 rounded shadow-sm italic">S1 & S3 CHAMPIONS</span>
+                </div>
+                <h3 class="text-xl font-black uppercase group-hover:text-[#2D9F94] transition">Real Kharghar FC</h3>
+                <p class="text-xs text-gray-400 mt-1 font-bold tracking-widest uppercase">Reals</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-red-600 hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+                <div class="relative">
+                    <img src="ATK logo.png" alt="Atlético De Kharghar FC" class="h-32 w-32 object-contain mb-6">
+                    <span class="absolute -top-2 -right-4 bg-[#2D9F94] text-white text-[10px] font-black px-2 py-1 rounded shadow-sm italic text-white">S2 CHAMPIONS</span>
+                </div>
+                <h3 class="text-xl font-black uppercase group-hover:text-red-600 transition">Atlético De Kharghar FC</h3>
+                <p class="text-xs text-gray-400 mt-1 font-bold tracking-widest uppercase">ATK</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-blue-900 hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+                <img src="Wolves.png" alt="Alpha Wolves United FC" class="h-32 w-32 object-contain mb-6">
+                <h3 class="text-xl font-black uppercase group-hover:text-blue-900 transition">Alpha Wolves United FC</h3>
+                <p class="text-xs text-gray-400 mt-1 font-bold tracking-widest uppercase">Wolves</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-yellow-500 hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+                <img src="KUFC.jpg" alt="Kharghar United FC" class="h-32 w-32 object-contain mb-6">
+                <h3 class="text-xl font-black uppercase group-hover:text-yellow-600 transition">Kharghar United FC</h3>
+                <p class="text-xs text-gray-400 mt-1 font-bold tracking-widest uppercase">United</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-gray-400 hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+                <img src="falcons.png" alt="Falcons FC Kharghar" class="h-32 w-32 object-contain mb-6">
+                <h3 class="text-xl font-black uppercase group-hover:text-red-600 transition">Falcons FC Kharghar</h3>
+                <p class="text-xs text-gray-400 mt-1 font-bold tracking-widest uppercase">Falcons</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-lg border-b-4 border-orange-500 hover:-translate-y-2 transition-all flex flex-col items-center text-center group">
+                <img src="mavknights.jpg" alt="Mavericks Knights FC" class="h-32 w-32 object-contain mb-6">
+                <h3 class="text-xl font-black uppercase group-hover:text-orange-500 transition">Mavericks Knights FC</h3>
+                <p class="text-xs text-gray-400 mt-1 font-bold tracking-widest uppercase">Mavericks</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+	
+
+    </body>
+</html>
