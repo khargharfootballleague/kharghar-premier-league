@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League Stats | Kharghar Premier League</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <style>
+        .dataTables_wrapper .dataTables_filter input {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+        }
+        table.dataTable.no-footer { border-bottom: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+ <nav class="bg-white text-gray-900 py-3 px-6 sticky top-0 z-50 flex justify-between items-center shadow-md">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition">
+                <img src="img-team-logo/kpllogo.jpg" alt="KPL Logo" class="h-12 w-auto">
+                <div class="text-xl font-black tracking-tighter leading-none hidden sm:block uppercase">
+                    KHARGHAR <br><span class="text-[#2D9F94]">PREMIER LEAGUE</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="flex space-x-6 font-semibold uppercase text-xs tracking-wider items-center">
+        <a href="index.html" class="hover:text-[#2D9F94] transition">Home</a>
+		
+		<a href="clubs.html" class="hover:text-[#2D9F94] transition">Clubs</a>
+		
+		<a href="records.html" class="hover:text-[#2D9F94] transition">Records</a>
+		<div class="relative group">
+            <button class="hover:text-[#2D9F94] transition flex items-center gap-1 pb-4 mt-4">
+                History <i class="fas fa-chevron-down text-[10px]"></i>
+            </button>
+            
+            <div class="absolute hidden group-hover:block bg-white border border-gray-200 mt-0 py-2 w-56 rounded-lg shadow-2xl right-0 z-[100]">
+
+                <a href="season3.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
+                    <span class="block font-bold">Season 3</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
+                </a>
+                <a href="season2.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
+                    <span class="block font-bold">Season 2</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Atletico De Kharghar</span>
+                </a>
+                <a href="season1.html" class="block px-4 py-3 hover:bg-gray-50">
+                    <span class="block font-bold">Season 1</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
+                </a>
+				<a href="stats.html" class="block px-4 py-3 hover:bg-gray-50">
+                    <span class="block font-bold">League Stats</span>
+                </a>
+            </div>
+        </div>
+		
+
+        <a href="https://www.instagram.com/khargharpremierleague/" target="_blank" class="text-pink-600">
+            <i class="fab fa-instagram text-xl"></i>
+        </a>
+		
+		<a href="https://www.youtube.com/@KhargharPremierLeague" target="_blank" class="text-pink-600">
+            <i class="fab fa-youtube text-xl"></i>
+        </a>
+        </div>
+    </nav>
+
+    <section class="bg-[#0D1B3E] text-white py-16 px-6 text-center">
+        <h1 class="text-5xl font-black uppercase italic tracking-tighter mb-4">League <span class="text-[#2D9F94]">Stats</span></h1>
+        <p class="text-gray-400 font-bold uppercase tracking-widest text-sm">Every Goal, Every Assist, Every Legend</p>
+    </section>
+
+    <main class="max-w-6xl mx-auto py-12 px-6">
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+            <button onclick="showSeason('s3')" class="season-btn active bg-[#2D9F94] text-white px-8 py-3 rounded-xl font-black uppercase shadow-lg">Season 03</button>
+            <button onclick="showSeason('s2')" class="season-btn bg-white text-gray-400 px-8 py-3 rounded-xl font-black uppercase shadow-md hover:bg-gray-100">Season 02</button>
+            <button onclick="showSeason('s1')" class="season-btn bg-white text-gray-400 px-8 py-3 rounded-xl font-black uppercase shadow-md hover:bg-gray-100">Season 01</button>
+			 <button onclick="showSeason('all')" class="season-btn bg-white text-gray-400 px-8 py-3 rounded-xl font-black uppercase shadow-md hover:bg-gray-100">All Time</button>
+			
+        </div>
+
+        <div id="season-s3" class="season-content">
+    <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+        <table id="table-s3" class="display w-full text-left">
+            <thead>
+                <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody class="text-sm font-bold">
+                <tr><td>Ratish Nair</td><td>Alpha Wolves United FC</td><td>3</td><td>0</td><td>31</td></tr>
+                <tr><td>Rituraj Fartyak</td><td>Alpha Wolves United FC</td><td>17</td><td>3</td><td>98</td></tr>
+                <tr><td>Akhil Nair</td><td>Alpha Wolves United FC</td><td>13</td><td>15</td><td>118</td></tr>
+                <tr><td>Mutum Singh</td><td>Alpha Wolves United FC</td><td>1</td><td>4</td><td>51</td></tr>
+                <tr><td>Ramesh Mishra</td><td>Alpha Wolves United FC</td><td>2</td><td>2</td><td>59</td></tr>
+                <tr><td>Sanu Daniel</td><td>Alpha Wolves United FC</td><td>4</td><td>2</td><td>77</td></tr>
+                <tr><td>Murali Chinna</td><td>Alpha Wolves United FC</td><td>0</td><td>0</td><td>25</td></tr>
+                <tr><td>Dhaval Mehta</td><td>Alpha Wolves United FC</td><td>1</td><td>1</td><td>57</td></tr>
+                <tr><td>Vijay Shanbag</td><td>Alpha Wolves United FC</td><td>1</td><td>1</td><td>59</td></tr>
+                <tr><td>Sahil Wasan</td><td>Alpha Wolves United FC</td><td>0</td><td>1</td><td>58</td></tr>
+                <tr><td>DJ Paddy</td><td>Atletico de kharghar FC</td><td>4</td><td>2</td><td>28</td></tr>
+                <tr><td>Ayan Saha</td><td>Atletico de kharghar FC</td><td>8</td><td>6</td><td>58</td></tr>
+                <tr><td>Anindya</td><td>Atletico de kharghar FC</td><td>0</td><td>0</td><td>7</td></tr>
+                <tr><td>Siddharth Thakur</td><td>Atletico de kharghar FC</td><td>5</td><td>4</td><td>38</td></tr>
+                <tr><td>Dinesh Shetty</td><td>Atletico de kharghar FC</td><td>0</td><td>1</td><td>7</td></tr>
+                <tr><td>Anurag</td><td>Atletico de kharghar FC</td><td>0</td><td>0</td><td>12</td></tr>
+                <tr><td>Jignesh Mehra</td><td>Atletico de kharghar FC</td><td>0</td><td>0</td><td>22</td></tr>
+                <tr><td>Sandeep Gupta</td><td>Atletico de kharghar FC</td><td>1</td><td>1</td><td>39</td></tr>
+                <tr><td>Amar Bhise</td><td>Atletico de kharghar FC</td><td>5</td><td>4</td><td>40</td></tr>
+                <tr><td>Mahipal Singh</td><td>Atletico de kharghar FC</td><td>0</td><td>0</td><td>22</td></tr>
+                <tr><td>Nitin Tewari</td><td>Mavericks Knights FC</td><td>2</td><td>1</td><td>23</td></tr>
+                <tr><td>Atul Pant</td><td>Mavericks Knights FC</td><td>2</td><td>5</td><td>20</td></tr>
+                <tr><td>Narendra Sharma</td><td>Mavericks Knights FC</td><td>4</td><td>2</td><td>19</td></tr>
+                <tr><td>Abhijeet Shinde</td><td>Mavericks Knights FC</td><td>3</td><td>2</td><td>15</td></tr>
+                <tr><td>Mayank Chauhan</td><td>Mavericks Knights FC</td><td>7</td><td>0</td><td>26</td></tr>
+                <tr><td>Neal Thakur</td><td>Mavericks Knights FC</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Rahul Dhumne</td><td>Mavericks Knights FC</td><td>0</td><td>0</td><td>7</td></tr>
+                <tr><td>Hemant P Chore</td><td>Mavericks Knights FC</td><td>0</td><td>1</td><td>8</td></tr>
+                <tr><td>Bikram</td><td>Mavericks Knights FC</td><td>0</td><td>0</td><td>7</td></tr>
+                <tr><td>Bhavik Gaudani</td><td>Mavericks Knights FC</td><td>0</td><td>0</td><td>1</td></tr>
+                <tr><td>Abhishek KD</td><td>Real Kharghar FC</td><td>8</td><td>9</td><td>77</td></tr>
+                <tr><td>Adarsh CV</td><td>Real Kharghar</td><td>7</td><td>4</td><td>60</td></tr>
+                <tr><td>Adil Petkar</td><td>Real Kharghar FC</td><td>4</td><td>6</td><td>46</td></tr>
+                <tr><td>Dexter Peters</td><td>Real Kharghar FC</td><td>20</td><td>18</td><td>156</td></tr>
+                <tr><td>Gaurav Shetty</td><td>Real Kharghar FC</td><td>19</td><td>6</td><td>115</td></tr>
+                <tr><td>Ankit Mishra</td><td>Real Kharghar FC</td><td>3</td><td>0</td><td>57</td></tr>
+                <tr><td>Pratik Bahuguna</td><td>Real Kharghar FC</td><td>1</td><td>3</td><td>80</td></tr>
+                <tr><td>Debananad</td><td>Real Kharghar FC</td><td>0</td><td>2</td><td>54</td></tr>
+                <tr><td>Rahul Raina</td><td>Real Kharghar FC</td><td>2</td><td>2</td><td>83</td></tr>
+                <tr><td>Rahul Sehrawat</td><td>Real Kharghar FC</td><td>0</td><td>2</td><td>51</td></tr>
+                <tr><td>Zahoor Baba</td><td>Kharghar United FC</td><td>2</td><td>0</td><td>17</td></tr>
+                <tr><td>Fayaz Khan</td><td>Kharghar United FC</td><td>7</td><td>1</td><td>40</td></tr>
+                <tr><td>Shazad Khan</td><td>Kharghar United FC</td><td>9</td><td>3</td><td>58</td></tr>
+                <tr><td>Vishal Farro</td><td>Kharghar United FC</td><td>0</td><td>2</td><td>11</td></tr>
+                <tr><td>Akash Kanturia</td><td>Kharghar United FC</td><td>0</td><td>3</td><td>18</td></tr>
+                <tr><td>Rohan Shetty</td><td>Kharghar United FC</td><td>1</td><td>0</td><td>18</td></tr>
+                <tr><td>Satbir Singh Mann</td><td>Kharghar United</td><td>0</td><td>0</td><td>26</td></tr>
+                <tr><td>Padam Gera</td><td>Kharghar United</td><td>1</td><td>0</td><td>33</td></tr>
+                <tr><td>Jigar Derashri</td><td>Kharghar United</td><td>0</td><td>0</td><td>4</td></tr>
+                <tr><td>Prashant Dumbre</td><td>Kharghar United</td><td>0</td><td>0</td><td>22</td></tr>
+                <tr><td>Suman Kumar</td><td>Kharghar United</td><td>0</td><td>2</td><td>46</td></tr>
+                <tr><td>Stephen Dscouza</td><td>Falcons FC Kharghar</td><td>8</td><td>3</td><td>42</td></tr>
+                <tr><td>Bruce Wilson</td><td>Falcons FC Kharghar</td><td>2</td><td>7</td><td>29</td></tr>
+                <tr><td>Vibhoo Sharma</td><td>Falcons FC Kharghar</td><td>0</td><td>1</td><td>9</td></tr>
+                <tr><td>Sitaram Nain</td><td>Falcons FC Kharghar</td><td>1</td><td>0</td><td>8</td></tr>
+                <tr><td>Manoj Shelar</td><td>Falcons FC Kharghar</td><td>0</td><td>1</td><td>14</td></tr>
+                <tr><td>Abhinav Jha</td><td>Falcons FC Kharghar</td><td>7</td><td>5</td><td>65</td></tr>
+                <tr><td>Amey</td><td>Falcons FC Kharghar</td><td>0</td><td>0</td><td>8</td></tr>
+                <tr><td>Gurjant Singh Bal</td><td>Falcons FC Kharghar</td><td>5</td><td>2</td><td>27</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+        <div id="season-s2" class="season-content hidden">
+    <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+        <table id="table-s2" class="display w-full text-left">
+            <thead>
+                <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody class="text-sm font-bold">
+                <tr><td>Ratish Nair</td><td>Alpha Wolves United FC</td><td>6</td><td>0</td><td>31</td></tr>
+                <tr><td>Rituraj Fartyal</td><td>Alpha Wolves United FC</td><td>15</td><td>2</td><td>73</td></tr>
+                <tr><td>Abhijeet</td><td>Alpha Wolves United FC</td><td>1</td><td>14</td><td>50</td></tr>
+                <tr><td>Mutum Singh</td><td>Alpha Wolves United FC</td><td>2</td><td>6</td><td>42</td></tr>
+                <tr><td>Bikram</td><td>Alpha Wolves United FC</td><td>0</td><td>0</td><td>22</td></tr>
+                <tr><td>Vijay Shanbag</td><td>Alpha Wolves United FC</td><td>0</td><td>0</td><td>18</td></tr>
+                <tr><td>Vibhoo Sharma</td><td>Alpha Wolves United FC</td><td>1</td><td>0</td><td>22</td></tr>
+                <tr><td>Neal Thakur</td><td>Alpha Wolves United FC</td><td>0</td><td>0</td><td>22</td></tr>
+                <tr><td>DJ Paddy</td><td>Atletico de Kharghar FC</td><td>7</td><td>7</td><td>57</td></tr>
+                <tr><td>Ayan Saha</td><td>Atletico de Kharghar FC</td><td>14</td><td>9</td><td>79</td></tr>
+                <tr><td>Fayaz</td><td>Atletico de Kharghar FC</td><td>14</td><td>5</td><td>73</td></tr>
+                <tr><td>Siddharth</td><td>Atletico de Kharghar FC</td><td>4</td><td>8</td><td>51</td></tr>
+                <tr><td>Ankit</td><td>Atletico de Kharghar FC</td><td>1</td><td>1</td><td>19</td></tr>
+                <tr><td>Anurag</td><td>Atletico de Kharghar FC</td><td>1</td><td>0</td><td>16</td></tr>
+                <tr><td>Jignesh Mehra</td><td>Atletico de Kharghar FC</td><td>0</td><td>0</td><td>42</td></tr>
+                <tr><td>Sandeep Gupta</td><td>Atletico de Kharghar FC</td><td>3</td><td>5</td><td>85</td></tr>
+                <tr><td>Satbir Singh Mann</td><td>Atletico de Kharghar FC</td><td>0</td><td>0</td><td>46</td></tr>
+                <tr><td>Rahul Sehrawat</td><td>Atletico de Kharghar FC</td><td>1</td><td>1</td><td>65</td></tr>
+                <tr><td>Nitin Tewari</td><td>Mavericks Knights FC</td><td>5</td><td>3</td><td>41</td></tr>
+                <tr><td>Arun Shukla</td><td>Mavericks Knights FC</td><td>3</td><td>1</td><td>25</td></tr>
+                <tr><td>Narendra Sharma</td><td>Mavericks Knights FC</td><td>1</td><td>4</td><td>28</td></tr>
+                <tr><td>Suman Kumar</td><td>Mavericks Knights FC</td><td>2</td><td>0</td><td>28</td></tr>
+                <tr><td>Abhishek Upadyay</td><td>Mavericks Knights FC</td><td>0</td><td>0</td><td>10</td></tr>
+                <tr><td>Moid Khan</td><td>Mavericks Knights FC</td><td>1</td><td>0</td><td>8</td></tr>
+                <tr><td>Rahul Dhumne</td><td>Mavericks Knights FC</td><td>0</td><td>1</td><td>27</td></tr>
+                <tr><td>Hemant P Chore</td><td>Mavericks Knights FC</td><td>0</td><td>0</td><td>25</td></tr>
+                <tr><td>Raman Morwal</td><td>Mavericks Knights FC</td><td>1</td><td>0</td><td>14</td></tr>
+                <tr><td>Abinash Goel</td><td>Mavericks Knights FC</td><td>0</td><td>0</td><td>12</td></tr>
+                <tr><td>Abhishek KD</td><td>Real Kharghar FC</td><td>6</td><td>3</td><td>46</td></tr>
+                <tr><td>Aadarsh CV</td><td>Real Kharghar FC</td><td>5</td><td>2</td><td>38</td></tr>
+                <tr><td>Adil Petkar</td><td>Real Kharghar FC</td><td>7</td><td>2</td><td>41</td></tr>
+                <tr><td>Rohit Shukla</td><td>Real Kharghar FC</td><td>0</td><td>0</td><td>12</td></tr>
+                <tr><td>Rahul Raina</td><td>Real Kharghar FC</td><td>0</td><td>2</td><td>27</td></tr>
+                <tr><td>Dhaval Mehta</td><td>Real Kharghar FC</td><td>0</td><td>0</td><td>20</td></tr>
+                <tr><td>Sandeep Bhatoa</td><td>Real Kharghar FC</td><td>0</td><td>1</td><td>26</td></tr>
+                <tr><td>Murali Chinna</td><td>Real Kharghar FC</td><td>0</td><td>0</td><td>9</td></tr>
+                <tr><td>Sukomal Dutta</td><td>Real Kharghar FC</td><td>0</td><td>0</td><td>10</td></tr>
+                <tr><td>Bhavik Gaudani</td><td>Real Kharghar FC</td><td>0</td><td>0</td><td>14</td></tr>
+                <tr><td>Zahoor Baba</td><td>Kharghar United FC</td><td>7</td><td>2</td><td>51</td></tr>
+                <tr><td>Sandeep Gaikwad</td><td>Kharghar United FC</td><td>4</td><td>4</td><td>34</td></tr>
+                <tr><td>Akhil Nair</td><td>Kharghar United FC</td><td>17</td><td>6</td><td>88</td></tr>
+                <tr><td>Dinesh Shetty</td><td>Kharghar United FC</td><td>0</td><td>0</td><td>5</td></tr>
+                <tr><td>Jigar Derarshi</td><td>Kharghar United FC</td><td>1</td><td>2</td><td>51</td></tr>
+                <tr><td>Rohan Shetty</td><td>Kharghar United FC</td><td>2</td><td>0</td><td>50</td></tr>
+                <tr><td>Padam Gera</td><td>Kharghar United FC</td><td>0</td><td>0</td><td>39</td></tr>
+                <tr><td>Abhas</td><td>Kharghar United FC</td><td>1</td><td>1</td><td>16</td></tr>
+                <tr><td>Prashant Dumbre</td><td>Kharghar United</td><td>0</td><td>3</td><td>47</td></tr>
+                <tr><td>Jitendra</td><td>Falcons FC Kharghar</td><td>0</td><td>1</td><td>10</td></tr>
+                <tr><td>Ramesh Mishra</td><td>Falcons FC Kharghar</td><td>2</td><td>1</td><td>30</td></tr>
+                <tr><td>Akash Kanturia</td><td>Falcons FC Kharghar</td><td>6</td><td>2</td><td>55</td></tr>
+                <tr><td>Vishal Farro</td><td>Falcons FC Kharghar</td><td>5</td><td>3</td><td>35</td></tr>
+                <tr><td>Kunal Chakraborty</td><td>Falcons FC Kharghar</td><td>2</td><td>2</td><td>26</td></tr>
+                <tr><td>Manoj Shelar</td><td>Falcons FC Kharghar</td><td>0</td><td>0</td><td>15</td></tr>
+                <tr><td>Souvick</td><td>Falcons FC Kharghar</td><td>2</td><td>2</td><td>25</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+        <div id="season-s1" class="season-content hidden">
+    <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+        <table id="table-s1" class="display w-full text-left">
+            <thead>
+                <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody class="text-sm font-bold">
+                <tr><td>Ratish Nair</td><td>Alpha Wolves United FC</td><td>0</td><td>1</td><td>10</td></tr>
+                <tr><td>Rituraj Fartyal</td><td>Alpha Wolves United FC</td><td>7</td><td>3</td><td>51</td></tr>
+                <tr><td>Fayaz Khan</td><td>Alpha Wolves United FC</td><td>7</td><td>0</td><td>44</td></tr>
+                <tr><td>Kunal Chakraborty</td><td>Alpha Wolves United FC</td><td>1</td><td>5</td><td>29</td></tr>
+                <tr><td>Mutum Singh</td><td>Alpha Wolves United FC</td><td>2</td><td>3</td><td>27</td></tr>
+                <tr><td>Zahoor Baba</td><td>Alpha Wolves United FC</td><td>0</td><td>1</td><td>10</td></tr>
+                <tr><td>Mahipal Singh</td><td>Alpha Wolves United FC</td><td>0</td><td>0</td><td>10</td></tr>
+                <tr><td>Rayudu</td><td>Alpha Wolves United FC</td><td>0</td><td>1</td><td>17</td></tr>
+                <tr><td>Vibhoo Sharma</td><td>Alpha Wolves United FC</td><td>0</td><td>0</td><td>12</td></tr>
+                <tr><td>Souvick Adhikari</td><td>Alpha Wolves United FC</td><td>0</td><td>0</td><td>10</td></tr>
+                <tr><td>DJ Paddy</td><td>Atletico de Kharghar FC</td><td>3</td><td>2</td><td>25</td></tr>
+                <tr><td>Abhi Mishra</td><td>Atletico de Kharghar FC</td><td>0</td><td>0</td><td>8</td></tr>
+                <tr><td>Ayan Saha</td><td>Atletico de Kharghar FC</td><td>5</td><td>4</td><td>45</td></tr>
+                <tr><td>Jitendra</td><td>Atletico de Kharghar FC</td><td>0</td><td>1</td><td>8</td></tr>
+                <tr><td>Jigarr Derashri</td><td>Atletico de Kharghar FC</td><td>1</td><td>0</td><td>9</td></tr>
+                <tr><td>Ramesh Mishra</td><td>Atletico de Kharghar FC</td><td>3</td><td>2</td><td>27</td></tr>
+                <tr><td>Jignesh Mehra</td><td>Atletico de Kharghar FC</td><td>0</td><td>1</td><td>9</td></tr>
+                <tr><td>Satbir Singh Mann</td><td>Atletico de Kharghar FC</td><td>0</td><td>0</td><td>7</td></tr>
+                <tr><td>Padam Gera</td><td>Atletico de Kharghar FC</td><td>0</td><td>0</td><td>3</td></tr>
+                <tr><td>Sandeep Gupta</td><td>Atletico de Kharghar FC</td><td>0</td><td>0</td><td>6</td></tr>
+                <tr><td>Nitin Tewari</td><td>Mavericks Knights FC</td><td>4</td><td>3</td><td>36</td></tr>
+                <tr><td>Adil Petker</td><td>Mavericks Knights FC</td><td>4</td><td>3</td><td>33</td></tr>
+                <tr><td>Narendra Sharma</td><td>Mavericks Knights FC</td><td>5</td><td>2</td><td>38</td></tr>
+                <tr><td>Suman Kumar</td><td>Mavericks Knights FC</td><td>1</td><td>1</td><td>21</td></tr>
+                <tr><td>Dinesh Shetty</td><td>Mavericks Knights FC</td><td>0</td><td>0</td><td>6</td></tr>
+                <tr><td>Raman Morwal</td><td>Mavericks Knights FC</td><td>3</td><td>1</td><td>25</td></tr>
+                <tr><td>Ankit Mishra</td><td>Mavericks Knights FC</td><td>1</td><td>0</td><td>8</td></tr>
+				<tr><td>Dikpal Jadhav</td><td>Mavericks Knights FC</td><td>0</td><td>0</td><td>7</td></tr>				
+				<tr><td>Hemant P Chore</td><td>Mavericks Knights FC</td><td>0</td><td>2</td><td>17</td></tr>
+                <tr><td>Abhishek KD</td><td>Real Kharghar FC</td><td>4</td><td>0</td><td>27</td></tr>
+                <tr><td>Neal Thakur</td><td>Real Kharghar FC</td><td>0</td><td>1</td><td>5</td></tr>
+                <tr><td>Rahul Sehrawat</td><td>Real Kharghar FC</td><td>0</td><td>0</td><td>21</td></tr>
+                <tr><td>Adarsh CV</td><td>Real Kharghar FC</td><td>3</td><td>3</td><td>31</td></tr>
+                <tr><td>Rahul Raina</td><td>Real Kharghar FC</td><td>0</td><td>1</td><td>21</td></tr>
+                <tr><td>Bruce Wilson</td><td>Real Kharghar FC</td><td>3</td><td>3</td><td>30</td></tr>
+                <tr><td>Manoj Shelar</td><td>Real Kharghar FC</td><td>1</td><td>1</td><td>28</td></tr>
+                <tr><td>Sandeep Gaikwad</td><td>Real Kharghar FC</td><td>1</td><td>1</td><td>14</td></tr>
+                <tr><td>Pravin Nair</td><td>Real Kharghar FC</td><td>0</td><td>1</td><td>21</td></tr>
+                <tr><td>Rohan Shetty</td><td>Real Kharghar FC</td><td>0</td><td>0</td><td>7</td></tr>
+                <tr><td>Dexter Peters</td><td>Real Kharghar FC</td><td>2</td><td>1</td><td>15</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="season-all" class="season-content hidden">
+    <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+        <table id="table-all" class="display w-full text-left">
+            <thead>
+                <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
+                    <th>Player</th>
+                    <th>Played</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Contribution</th>
+                </tr>
+            </thead>
+            <tbody class="text-sm font-bold">
+                <tr><td>Aadarsh CV</td><td>29</td><td>14</td><td>9</td><td>23</td></tr>
+                <tr><td>Abhas</td><td>8</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Abhi Mishra</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Abhijeet Shinde</td><td>20</td><td>3</td><td>16</td><td>19</td></tr>
+                <tr><td>Abhinav Jha</td><td>11</td><td>7</td><td>4</td><td>11</td></tr>
+                <tr><td>Abhishek K</td><td>27</td><td>18</td><td>11</td><td>29</td></tr>
+                <tr><td>Abhishek U</td><td>7</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Abinash Goel</td><td>5</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Adil Petker</td><td>19</td><td>14</td><td>11</td><td>25</td></tr>
+                <tr><td>Akash Kanturia</td><td>19</td><td>6</td><td>4</td><td>10</td></tr>
+                <tr><td>Akhil Nair</td><td>24</td><td>30</td><td>21</td><td>51</td></tr>
+                <tr><td>Amar Bhise</td><td>6</td><td>5</td><td>4</td><td>9</td></tr>
+                <tr><td>Amey Acharya</td><td>11</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Anindya Kanti Sur</td><td>5</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Ankit Mishra</td><td>25</td><td>5</td><td>1</td><td>6</td></tr>
+                <tr><td>Anurag</td><td>15</td><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>Arun Shukla</td><td>9</td><td>3</td><td>1</td><td>4</td></tr>
+                <tr><td>Atul Pant</td><td>8</td><td>2</td><td>5</td><td>7</td></tr>
+                <tr><td>Ayan Saha</td><td>26</td><td>27</td><td>19</td><td>46</td></tr>
+                <tr><td>Bhavik Gaudani</td><td>14</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Bikram</td><td>20</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Bruce Wilson</td><td>16</td><td>5</td><td>10</td><td>15</td></tr>
+                <tr><td>Debanand Majhi</td><td>9</td><td>0</td><td>2</td><td>2</td></tr>
+                <tr><td>Deepak</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Dexter Peters</td><td>13</td><td>22</td><td>19</td><td>41</td></tr>
+                <tr><td>Dhaval Mehta</td><td>23</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Dikpal Jadhav</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Dinesh Shetty</td><td>19</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>DJ Paddy</td><td>25</td><td>14</td><td>11</td><td>25</td></tr>
+                <tr><td>Fayaz Khan</td><td>30</td><td>27</td><td>6</td><td>33</td></tr>
+                <tr><td>Gaurav Shetty</td><td>11</td><td>19</td><td>6</td><td>25</td></tr>
+                <tr><td>Gurjant singh Bal</td><td>10</td><td>5</td><td>2</td><td>7</td></tr>
+                <tr><td>Hemant P Chore</td><td>26</td><td>0</td><td>3</td><td>3</td></tr>
+                <tr><td>Jigarr Derashri</td><td>21</td><td>2</td><td>2</td><td>4</td></tr>
+                <tr><td>Jignesh Mehra</td><td>26</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Jitendra</td><td>15</td><td>0</td><td>2</td><td>2</td></tr>
+                <tr><td>Kunal Chakraborty</td><td>27</td><td>3</td><td>7</td><td>10</td></tr>
+                <tr><td>Mahipal Singh</td><td>11</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Manoj Shelar</td><td>26</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Mayank Chauhan</td><td>8</td><td>7</td><td>0</td><td>7</td></tr>
+                <tr><td>Moid Khan</td><td>4</td><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>Murali</td><td>15</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Mutum Singh</td><td>30</td><td>4</td><td>13</td><td>17</td></tr>
+                <tr><td>Narendra</td><td>24</td><td>9</td><td>8</td><td>17</td></tr>
+                <tr><td>Neal</td><td>26</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Nitin Tewari</td><td>27</td><td>11</td><td>7</td><td>18</td></tr>
+                <tr><td>Padam Gera</td><td>29</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Prashant</td><td>20</td><td>0</td><td>3</td><td>3</td></tr>
+                <tr><td>Pratik Bahuguna</td><td>12</td><td>1</td><td>4</td><td>5</td></tr>
+                <tr><td>Pravin Nair</td><td>6</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Rahul Dhumne</td><td>26</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Rahul Raina</td><td>31</td><td>2</td><td>5</td><td>7</td></tr>
+                <tr><td>Rahul Sehrawat</td><td>27</td><td>1</td><td>3</td><td>4</td></tr>
+                <tr><td>Raman Morwal</td><td>6</td><td>4</td><td>1</td><td>5</td></tr>
+                <tr><td>Ramesh Mishra</td><td>28</td><td>7</td><td>5</td><td>12</td></tr>
+                <tr><td>Ratish Nair</td><td>30</td><td>9</td><td>1</td><td>10</td></tr>
+                <tr><td>Rayudu</td><td>7</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Rituraj Fartyal</td><td>31</td><td>39</td><td>8</td><td>47</td></tr>
+                <tr><td>Rohan Shetty</td><td>26</td><td>2</td><td>0</td><td>2</td></tr>
+                <tr><td>Rohit Shula</td><td>15</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Sahil wasan</td><td>12</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Sandeep B</td><td>12</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Sandeep Gaikwad</td><td>16</td><td>4</td><td>5</td><td>9</td></tr>
+                <tr><td>Sandeep Gupta</td><td>26</td><td>5</td><td>6</td><td>11</td></tr>
+                <tr><td>Sanu daniel</td><td>11</td><td>4</td><td>4</td><td>8</td></tr>
+                <tr><td>Satbir Singh Mann</td><td>26</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Shazad khan</td><td>12</td><td>9</td><td>3</td><td>12</td></tr>
+                <tr><td>Siddharth Thakr</td><td>21</td><td>9</td><td>12</td><td>21</td></tr>
+                <tr><td>SITARAM NAIN</td><td>9</td><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>Souvick Adhikari</td><td>13</td><td>0</td><td>2</td><td>2</td></tr>
+                <tr><td>Stephen Dsouza</td><td>12</td><td>8</td><td>3</td><td>11</td></tr>
+                <tr><td>Sukomal Dutta</td><td>7</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Suman Kumar</td><td>26</td><td>3</td><td>3</td><td>6</td></tr>
+                <tr><td>Vibhoo Sharma</td><td>28</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Vijay Shanbag</td><td>22</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Vijay Pratap</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Vishal Farro</td><td>19</td><td>5</td><td>5</td><td>10</td></tr>
+                <tr><td>Zahoor Baba</td><td>26</td><td>8</td><td>3</td><td>11</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    
+    <script>
+        $(document).ready( function () {
+            $('#table-s3, #table-s2, #table-s1,#table-all').DataTable({
+                paging: true,
+                pageLength: 10,
+                searching: true,
+                info: false,
+                lengthChange: false
+            });
+        });
+
+        function showSeason(id) {
+            // Hide all
+            $('.season-content').addClass('hidden');
+            $('.season-btn').removeClass('bg-[#2D9F94] text-white').addClass('bg-white text-gray-400');
+            
+            // Show selected
+            $('#season-' + id).removeClass('hidden');
+            event.currentTarget.classList.add('bg-[#2D9F94]', 'text-white');
+            event.currentTarget.classList.remove('bg-white', 'text-gray-400');
+        }
+    </script>
+</body>
+</html>
