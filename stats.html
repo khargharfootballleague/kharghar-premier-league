@@ -7,15 +7,46 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-    <style>
-        .dataTables_wrapper .dataTables_filter input {
-            border: 1px solid #e5e7eb;
-            border-radius: 0.75rem;
-            padding: 0.5rem 1rem;
-            margin-bottom: 1rem;
+   <style>
+    /* Prevent the table from squishing on mobile */
+    .dataTables_wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table.dataTable {
+        width: 100% !important;
+        margin: 0 auto;
+        clear: both;
+        border-collapse: collapse;
+    }
+
+    /* Style the scrollbar to be subtle but visible */
+    .overflow-x-auto::-webkit-scrollbar {
+        height: 4px;
+    }
+    .overflow-x-auto::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+        background: #2D9F94; 
+        border-radius: 10px;
+    }
+
+    /* Mobile font adjustment */
+    @media (max-width: 768px) {
+        table.dataTable tbody td {
+            font-size: 12px;
+            padding: 12px 8px !important;
         }
-        table.dataTable.no-footer { border-bottom: none; }
-    </style>
+        table.dataTable thead th {
+            font-size: 9px;
+            padding: 10px 8px !important;
+        }
+    }
+</style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
@@ -55,7 +86,7 @@
                     <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
                 </a>
 				<a href="stats.html" class="block px-4 py-3 hover:bg-gray-50">
-                    <span class="block font-bold">League Stats</span>
+                    <span class="block font-bold">Player Stats</span>
                 </a>
             </div>
         </div>
@@ -72,7 +103,7 @@
     </nav>
 
     <section class="bg-[#0D1B3E] text-white py-16 px-6 text-center">
-        <h1 class="text-5xl font-black uppercase italic tracking-tighter mb-4">League <span class="text-[#2D9F94]">Stats</span></h1>
+        <h1 class="text-5xl font-black uppercase italic tracking-tighter mb-4">Player <span class="text-[#2D9F94]">Stats</span></h1>
         <p class="text-gray-400 font-bold uppercase tracking-widest text-sm">Every Goal, Every Assist, Every Legend</p>
     </section>
 
@@ -87,6 +118,7 @@
 
         <div id="season-s3" class="season-content">
     <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+	<div class="overflow-x-auto">
         <table id="table-s3" class="display w-full text-left">
             <thead>
                 <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
@@ -160,10 +192,12 @@
             </tbody>
         </table>
     </div>
+	</div>
 </div>
 
         <div id="season-s2" class="season-content hidden">
     <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+	<div class="overflow-x-auto">
         <table id="table-s2" class="display w-full text-left">
             <thead>
                 <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
@@ -232,10 +266,12 @@
             </tbody>
         </table>
     </div>
+	</div>
 </div>
 
         <div id="season-s1" class="season-content hidden">
     <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+	<div class="overflow-x-auto">
         <table id="table-s1" class="display w-full text-left">
             <thead>
                 <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
@@ -290,10 +326,12 @@
             </tbody>
         </table>
     </div>
+	</div>
 </div>
 
 <div id="season-all" class="season-content hidden">
     <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+	<div class="overflow-x-auto">
         <table id="table-all" class="display w-full text-left">
             <thead>
                 <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
@@ -386,6 +424,7 @@
             </tbody>
         </table>
     </div>
+	</div>
 </div>
     </main>
 
