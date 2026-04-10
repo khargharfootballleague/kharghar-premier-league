@@ -109,14 +109,116 @@
 
     <main class="max-w-6xl mx-auto py-12 px-6">
         <div class="flex flex-wrap justify-center gap-4 mb-10">
-            <button onclick="showSeason('s3')" class="season-btn active bg-[#2D9F94] text-white px-8 py-3 rounded-xl font-black uppercase shadow-lg">Season 03</button>
+			 <button onclick="showSeason('all')" class="season-btn active bg-[#2D9F94] text-white px-8 py-3 rounded-xl font-black uppercase shadow-lg">All Time</button>
+			 <button onclick="showSeason('s3')" class="season-btn bg-white text-gray-400 px-8 py-3 rounded-xl font-black uppercase shadow-md hover:bg-gray-100">Season 03</button>
             <button onclick="showSeason('s2')" class="season-btn bg-white text-gray-400 px-8 py-3 rounded-xl font-black uppercase shadow-md hover:bg-gray-100">Season 02</button>
             <button onclick="showSeason('s1')" class="season-btn bg-white text-gray-400 px-8 py-3 rounded-xl font-black uppercase shadow-md hover:bg-gray-100">Season 01</button>
-			 <button onclick="showSeason('all')" class="season-btn bg-white text-gray-400 px-8 py-3 rounded-xl font-black uppercase shadow-md hover:bg-gray-100">All Time</button>
 			
         </div>
+		
+		<div id="season-all" class="season-content">
+    <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
+	<div class="overflow-x-auto">
+        <table id="table-all" class="display w-full text-left">
+            <thead>
+                <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
+                    <th>Player</th>
+                    <th>Played</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Contribution</th>
+                </tr>
+            </thead>
+            <tbody class="text-sm font-bold">
+                <tr><td>Aadarsh CV</td><td>29</td><td>14</td><td>9</td><td>23</td></tr>
+                <tr><td>Abhas</td><td>8</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Abhi Mishra</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Abhijeet Shinde</td><td>20</td><td>3</td><td>16</td><td>19</td></tr>
+                <tr><td>Abhinav Jha</td><td>11</td><td>7</td><td>4</td><td>11</td></tr>
+                <tr><td>Abhishek K</td><td>27</td><td>18</td><td>11</td><td>29</td></tr>
+                <tr><td>Abhishek U</td><td>7</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Abinash Goel</td><td>5</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Adil Petker</td><td>19</td><td>14</td><td>11</td><td>25</td></tr>
+                <tr><td>Akash Kanturia</td><td>19</td><td>6</td><td>4</td><td>10</td></tr>
+                <tr><td><a href="playerprofile/akhil.html" class="text-[#2D9F94] hover:underline flex items-center gap-2">
+            Akhil Nair <i class="fas fa-external-link-alt text-[8px]"></i>
+        </a></td><td>24</td><td>30</td><td>21</td><td>51</td></tr>
+                <tr><td>Amar Bhise</td><td>6</td><td>5</td><td>4</td><td>9</td></tr>
+                <tr><td>Amey Acharya</td><td>11</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Anindya Kanti Sur</td><td>5</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Ankit Mishra</td><td>25</td><td>5</td><td>1</td><td>6</td></tr>
+                <tr><td>Anurag</td><td>15</td><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>Arun Shukla</td><td>9</td><td>3</td><td>1</td><td>4</td></tr>
+                <tr><td>Atul Pant</td><td>8</td><td>2</td><td>5</td><td>7</td></tr>
+                <tr><td>Ayan Saha</td><td>26</td><td>27</td><td>19</td><td>46</td></tr>
+                <tr><td>Bhavik Gaudani</td><td>14</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Bikram</td><td>20</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Bruce Wilson</td><td>16</td><td>5</td><td>10</td><td>15</td></tr>
+                <tr><td>Debanand Majhi</td><td>9</td><td>0</td><td>2</td><td>2</td></tr>
+                <tr><td>Deepak</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td><a href="playerprofile/dexter.html" class="text-[#2D9F94] hover:underline flex items-center gap-2">
+            Dexter Peters <i class="fas fa-external-link-alt text-[8px]"></i>
+        </a></td><td>13</td><td>22</td><td>19</td><td>41</td></tr>
+                <tr><td>Dhaval Mehta</td><td>23</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Dikpal Jadhav</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Dinesh Shetty</td><td>19</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>DJ Paddy</td><td>25</td><td>14</td><td>11</td><td>25</td></tr>
+                <tr><td>Fayaz Khan</td><td>30</td><td>27</td><td>6</td><td>33</td></tr>
+                <tr><td>Gaurav Shetty</td><td>11</td><td>19</td><td>6</td><td>25</td></tr>
+                <tr><td>Gurjant singh Bal</td><td>10</td><td>5</td><td>2</td><td>7</td></tr>
+                <tr><td>Hemant P Chore</td><td>26</td><td>0</td><td>3</td><td>3</td></tr>
+                <tr><td>Jigarr Derashri</td><td>21</td><td>2</td><td>2</td><td>4</td></tr>
+                <tr><td>Jignesh Mehra</td><td>26</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Jitendra</td><td>15</td><td>0</td><td>2</td><td>2</td></tr>
+                <tr><td>Kunal Chakraborty</td><td>27</td><td>3</td><td>7</td><td>10</td></tr>
+                <tr><td>Mahipal Singh</td><td>11</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Manoj Shelar</td><td>26</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Mayank Chauhan</td><td>8</td><td>7</td><td>0</td><td>7</td></tr>
+                <tr><td>Moid Khan</td><td>4</td><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>Murali</td><td>15</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Mutum Singh</td><td>30</td><td>4</td><td>13</td><td>17</td></tr>
+                <tr><td>Narendra</td><td>24</td><td>9</td><td>8</td><td>17</td></tr>
+                <tr><td>Neal</td><td>26</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Nitin Tewari</td><td>27</td><td>11</td><td>7</td><td>18</td></tr>
+                <tr><td>Padam Gera</td><td>29</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Prashant</td><td>20</td><td>0</td><td>3</td><td>3</td></tr>
+                <tr><td>Pratik Bahuguna</td><td>12</td><td>1</td><td>4</td><td>5</td></tr>
+                <tr><td>Pravin Nair</td><td>6</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Rahul Dhumne</td><td>26</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Rahul Raina</td><td>31</td><td>2</td><td>5</td><td>7</td></tr>
+                <tr><td>Rahul Sehrawat</td><td>27</td><td>1</td><td>3</td><td>4</td></tr>
+                <tr><td>Raman Morwal</td><td>6</td><td>4</td><td>1</td><td>5</td></tr>
+                <tr><td>Ramesh Mishra</td><td>28</td><td>7</td><td>5</td><td>12</td></tr>
+                <tr><td>Ratish Nair</td><td>30</td><td>9</td><td>1</td><td>10</td></tr>
+                <tr><td>Rayudu</td><td>7</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Rituraj Fartyal</td><td>31</td><td>39</td><td>8</td><td>47</td></tr>
+                <tr><td>Rohan Shetty</td><td>26</td><td>2</td><td>0</td><td>2</td></tr>
+                <tr><td>Rohit Shula</td><td>15</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Sahil wasan</td><td>12</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Sandeep B</td><td>12</td><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>Sandeep Gaikwad</td><td>16</td><td>4</td><td>5</td><td>9</td></tr>
+                <tr><td>Sandeep Gupta</td><td>26</td><td>5</td><td>6</td><td>11</td></tr>
+                <tr><td>Sanu daniel</td><td>11</td><td>4</td><td>4</td><td>8</td></tr>
+                <tr><td>Satbir Singh Mann</td><td>26</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Shazad khan</td><td>12</td><td>9</td><td>3</td><td>12</td></tr>
+                <tr><td>Siddharth Thakr</td><td>21</td><td>9</td><td>12</td><td>21</td></tr>
+                <tr><td>SITARAM NAIN</td><td>9</td><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>Souvick Adhikari</td><td>13</td><td>0</td><td>2</td><td>2</td></tr>
+                <tr><td>Stephen Dsouza</td><td>12</td><td>8</td><td>3</td><td>11</td></tr>
+                <tr><td>Sukomal Dutta</td><td>7</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Suman Kumar</td><td>26</td><td>3</td><td>3</td><td>6</td></tr>
+                <tr><td>Vibhoo Sharma</td><td>28</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Vijay Shanbag</td><td>22</td><td>1</td><td>1</td><td>2</td></tr>
+                <tr><td>Vijay Pratap</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>Vishal Farro</td><td>19</td><td>5</td><td>5</td><td>10</td></tr>
+                <tr><td>Zahoor Baba</td><td>26</td><td>8</td><td>3</td><td>11</td></tr>
+            </tbody>
+        </table>
+    </div>
+	</div>
+</div>
 
-        <div id="season-s3" class="season-content">
+        <div id="season-s3" class="season-content hidden">
     <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
 	<div class="overflow-x-auto">
         <table id="table-s3" class="display w-full text-left">
@@ -329,103 +431,7 @@
 	</div>
 </div>
 
-<div id="season-all" class="season-content hidden">
-    <div class="bg-white rounded-[2rem] shadow-xl p-8 overflow-hidden border border-gray-100">
-	<div class="overflow-x-auto">
-        <table id="table-all" class="display w-full text-left">
-            <thead>
-                <tr class="text-gray-400 uppercase text-[10px] tracking-widest">
-                    <th>Player</th>
-                    <th>Played</th>
-                    <th>Goals</th>
-                    <th>Assists</th>
-                    <th>Contribution</th>
-                </tr>
-            </thead>
-            <tbody class="text-sm font-bold">
-                <tr><td>Aadarsh CV</td><td>29</td><td>14</td><td>9</td><td>23</td></tr>
-                <tr><td>Abhas</td><td>8</td><td>1</td><td>1</td><td>2</td></tr>
-                <tr><td>Abhi Mishra</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Abhijeet Shinde</td><td>20</td><td>3</td><td>16</td><td>19</td></tr>
-                <tr><td>Abhinav Jha</td><td>11</td><td>7</td><td>4</td><td>11</td></tr>
-                <tr><td>Abhishek K</td><td>27</td><td>18</td><td>11</td><td>29</td></tr>
-                <tr><td>Abhishek U</td><td>7</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Abinash Goel</td><td>5</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Adil Petker</td><td>19</td><td>14</td><td>11</td><td>25</td></tr>
-                <tr><td>Akash Kanturia</td><td>19</td><td>6</td><td>4</td><td>10</td></tr>
-                <tr><td>Akhil Nair</td><td>24</td><td>30</td><td>21</td><td>51</td></tr>
-                <tr><td>Amar Bhise</td><td>6</td><td>5</td><td>4</td><td>9</td></tr>
-                <tr><td>Amey Acharya</td><td>11</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Anindya Kanti Sur</td><td>5</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Ankit Mishra</td><td>25</td><td>5</td><td>1</td><td>6</td></tr>
-                <tr><td>Anurag</td><td>15</td><td>1</td><td>0</td><td>1</td></tr>
-                <tr><td>Arun Shukla</td><td>9</td><td>3</td><td>1</td><td>4</td></tr>
-                <tr><td>Atul Pant</td><td>8</td><td>2</td><td>5</td><td>7</td></tr>
-                <tr><td>Ayan Saha</td><td>26</td><td>27</td><td>19</td><td>46</td></tr>
-                <tr><td>Bhavik Gaudani</td><td>14</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Bikram</td><td>20</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Bruce Wilson</td><td>16</td><td>5</td><td>10</td><td>15</td></tr>
-                <tr><td>Debanand Majhi</td><td>9</td><td>0</td><td>2</td><td>2</td></tr>
-                <tr><td>Deepak</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Dexter Peters</td><td>13</td><td>22</td><td>19</td><td>41</td></tr>
-                <tr><td>Dhaval Mehta</td><td>23</td><td>1</td><td>1</td><td>2</td></tr>
-                <tr><td>Dikpal Jadhav</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Dinesh Shetty</td><td>19</td><td>0</td><td>1</td><td>1</td></tr>
-                <tr><td>DJ Paddy</td><td>25</td><td>14</td><td>11</td><td>25</td></tr>
-                <tr><td>Fayaz Khan</td><td>30</td><td>27</td><td>6</td><td>33</td></tr>
-                <tr><td>Gaurav Shetty</td><td>11</td><td>19</td><td>6</td><td>25</td></tr>
-                <tr><td>Gurjant singh Bal</td><td>10</td><td>5</td><td>2</td><td>7</td></tr>
-                <tr><td>Hemant P Chore</td><td>26</td><td>0</td><td>3</td><td>3</td></tr>
-                <tr><td>Jigarr Derashri</td><td>21</td><td>2</td><td>2</td><td>4</td></tr>
-                <tr><td>Jignesh Mehra</td><td>26</td><td>0</td><td>1</td><td>1</td></tr>
-                <tr><td>Jitendra</td><td>15</td><td>0</td><td>2</td><td>2</td></tr>
-                <tr><td>Kunal Chakraborty</td><td>27</td><td>3</td><td>7</td><td>10</td></tr>
-                <tr><td>Mahipal Singh</td><td>11</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Manoj Shelar</td><td>26</td><td>1</td><td>1</td><td>2</td></tr>
-                <tr><td>Mayank Chauhan</td><td>8</td><td>7</td><td>0</td><td>7</td></tr>
-                <tr><td>Moid Khan</td><td>4</td><td>1</td><td>0</td><td>1</td></tr>
-                <tr><td>Murali</td><td>15</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Mutum Singh</td><td>30</td><td>4</td><td>13</td><td>17</td></tr>
-                <tr><td>Narendra</td><td>24</td><td>9</td><td>8</td><td>17</td></tr>
-                <tr><td>Neal</td><td>26</td><td>0</td><td>1</td><td>1</td></tr>
-                <tr><td>Nitin Tewari</td><td>27</td><td>11</td><td>7</td><td>18</td></tr>
-                <tr><td>Padam Gera</td><td>29</td><td>0</td><td>1</td><td>1</td></tr>
-                <tr><td>Prashant</td><td>20</td><td>0</td><td>3</td><td>3</td></tr>
-                <tr><td>Pratik Bahuguna</td><td>12</td><td>1</td><td>4</td><td>5</td></tr>
-                <tr><td>Pravin Nair</td><td>6</td><td>0</td><td>1</td><td>1</td></tr>
-                <tr><td>Rahul Dhumne</td><td>26</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Rahul Raina</td><td>31</td><td>2</td><td>5</td><td>7</td></tr>
-                <tr><td>Rahul Sehrawat</td><td>27</td><td>1</td><td>3</td><td>4</td></tr>
-                <tr><td>Raman Morwal</td><td>6</td><td>4</td><td>1</td><td>5</td></tr>
-                <tr><td>Ramesh Mishra</td><td>28</td><td>7</td><td>5</td><td>12</td></tr>
-                <tr><td>Ratish Nair</td><td>30</td><td>9</td><td>1</td><td>10</td></tr>
-                <tr><td>Rayudu</td><td>7</td><td>0</td><td>1</td><td>1</td></tr>
-                <tr><td>Rituraj Fartyal</td><td>31</td><td>39</td><td>8</td><td>47</td></tr>
-                <tr><td>Rohan Shetty</td><td>26</td><td>2</td><td>0</td><td>2</td></tr>
-                <tr><td>Rohit Shula</td><td>15</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Sahil wasan</td><td>12</td><td>0</td><td>1</td><td>1</td></tr>
-                <tr><td>Sandeep B</td><td>12</td><td>0</td><td>1</td><td>1</td></tr>
-                <tr><td>Sandeep Gaikwad</td><td>16</td><td>4</td><td>5</td><td>9</td></tr>
-                <tr><td>Sandeep Gupta</td><td>26</td><td>5</td><td>6</td><td>11</td></tr>
-                <tr><td>Sanu daniel</td><td>11</td><td>4</td><td>4</td><td>8</td></tr>
-                <tr><td>Satbir Singh Mann</td><td>26</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Shazad khan</td><td>12</td><td>9</td><td>3</td><td>12</td></tr>
-                <tr><td>Siddharth Thakr</td><td>21</td><td>9</td><td>12</td><td>21</td></tr>
-                <tr><td>SITARAM NAIN</td><td>9</td><td>1</td><td>0</td><td>1</td></tr>
-                <tr><td>Souvick Adhikari</td><td>13</td><td>0</td><td>2</td><td>2</td></tr>
-                <tr><td>Stephen Dsouza</td><td>12</td><td>8</td><td>3</td><td>11</td></tr>
-                <tr><td>Sukomal Dutta</td><td>7</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Suman Kumar</td><td>26</td><td>3</td><td>3</td><td>6</td></tr>
-                <tr><td>Vibhoo Sharma</td><td>28</td><td>1</td><td>1</td><td>2</td></tr>
-                <tr><td>Vijay Shanbag</td><td>22</td><td>1</td><td>1</td><td>2</td></tr>
-                <tr><td>Vijay Pratap</td><td>4</td><td>0</td><td>0</td><td>0</td></tr>
-                <tr><td>Vishal Farro</td><td>19</td><td>5</td><td>5</td><td>10</td></tr>
-                <tr><td>Zahoor Baba</td><td>26</td><td>8</td><td>3</td><td>11</td></tr>
-            </tbody>
-        </table>
-    </div>
-	</div>
-</div>
+
     </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
