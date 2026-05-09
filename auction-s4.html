@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPL Season 4 | Mega Auction Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .auction-gradient { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .gold-border { border-color: #fbbf24; }
+        .teal-text { color: #2D9F94; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-900 font-sans">
+
+   <nav class="bg-white text-gray-900 py-3 px-6 sticky top-0 z-50 flex justify-between items-center shadow-md">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition">
+                <img src="img-team-logo/kpllogo.jpg" alt="KPL Logo" class="h-12 w-auto">
+                <div class="text-xl font-black tracking-tighter leading-none hidden sm:block uppercase">
+                    KHARGHAR <br><span class="text-[#2D9F94]">PREMIER LEAGUE</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="flex space-x-6 font-semibold uppercase text-xs tracking-wider items-center">
+        <a href="index.html" class="hover:text-[#2D9F94] transition">Home</a>
+		
+		<a href="clubs.html" class="hover:text-[#2D9F94] transition">Clubs</a>
+		
+		<a href="records.html" class="hover:text-[#2D9F94] transition">Records</a>
+		<div class="relative group">
+            <button class="hover:text-[#2D9F94] transition flex items-center gap-1 pb-4 mt-4">
+                History <i class="fas fa-chevron-down text-[10px]"></i>
+            </button>
+            
+            <div class="absolute hidden group-hover:block bg-white border border-gray-200 mt-0 py-2 w-56 rounded-lg shadow-2xl right-0 z-[100]">
+
+                <a href="season3.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
+                    <span class="block font-bold">Season 3</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
+                </a>
+                <a href="season2.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
+                    <span class="block font-bold">Season 2</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Atletico De Kharghar</span>
+                </a>
+                <a href="season1.html" class="block px-4 py-3 hover:bg-gray-50">
+                    <span class="block font-bold">Season 1</span>
+                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
+                </a>
+				<a href="stats.html" class="block px-4 py-3 hover:bg-gray-50">
+                    <span class="block font-bold">Player Stats</span>
+                </a>
+            </div>
+        </div>
+		
+
+        <a href="https://www.instagram.com/khargharpremierleague/" target="_blank" class="text-pink-600">
+            <i class="fab fa-instagram text-xl"></i>
+        </a>
+		
+		<a href="https://www.youtube.com/@KhargharPremierLeague" target="_blank" class="text-pink-600">
+            <i class="fab fa-youtube text-xl"></i>
+        </a>
+        </div>
+    </nav>
+
+    <header class="auction-gradient py-20 px-6 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div class="relative z-10">
+            <span class="bg-[#fbbf24] text-black px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Mega Auction 2026</span>
+            <h1 class="text-6xl md:text-8xl font-black italic uppercase tracking-tighter mt-4">The Big <span class="text-[#fbbf24]">Bid</span></h1>
+            <p class="text-slate-400 mt-4 max-w-2xl mx-auto font-medium italic">Retentions confirmed. Rosters cleared. The battle for the Season 4 Title begins in the auction room.</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 -mt-12 relative z-20 pb-20">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-3xl shadow-xl border-b-4 border-teal-500">
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Retention Deadline</p>
+                <h3 class="text-2xl font-bold">May 15th, 2026</h3>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-xl border-b-4 border-amber-500">
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Auction Style</p>
+                <h3 class="text-2xl font-bold uppercase italic">Mega Auction</h3>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-xl border-b-4 border-blue-500">
+                <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Registered Players</p>
+                <h3 class="text-2xl font-bold">70+ Athletes</h3>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-end mb-8 px-2">
+    <div>
+        <h2 class="text-3xl font-black uppercase italic flex items-center gap-3">
+            <i class="fas fa-star text-amber-500"></i> Top Players to Watchout for
+        </h2>
+        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">High-Value Franchise Targets</p>
+    </div>
+    <div class="flex gap-2">
+        <button onclick="scrollMarquee(-1)" class="h-10 w-10 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition active:scale-95">
+            <i class="fas fa-chevron-left text-slate-400"></i>
+        </button>
+        <button onclick="scrollMarquee(1)" class="h-10 w-10 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center hover:bg-slate-50 transition active:scale-95">
+            <i class="fas fa-chevron-right text-slate-400"></i>
+        </button>
+    </div>
+</div>
+
+<div class="relative mb-16">
+    <div id="marqueeSlider" class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-8 snap-x snap-mandatory px-2">
+	
+	
+	
+	<div class="min-w-[320px] md:min-w-[380px] snap-start bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition hover:scale-[1.02]">
+            <div class="bg-slate-900 h-44 relative">
+                    <img src="img/kiran.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Kiran+Gaddam&background=0f172a&color=fff';">
+                    <div class="absolute bottom-4 left-6">
+                        <span class="bg-[#fbbf24] text-black px-3 py-1 rounded-lg text-[10px] font-black uppercase">Playmaker</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h4 class="text-2xl font-black uppercase italic">Kiran Gaddam</h4>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Midfielder</p>
+                    <div class="flex justify-between mt-6 pt-6 border-t border-slate-100">
+                        <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">League</p>
+                            <p class="text-xl font-black">100%</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">Team Practice</p>
+                            <p class="text-xl font-black">Yes</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">Traits</p>
+                            <p class="text-xl font-black text-teal-600">Playmaker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+		<div class="min-w-[320px] md:min-w-[380px] snap-start bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition hover:scale-[1.02]">
+            <div class="bg-slate-900 h-44 relative">
+                    <img src="img/akshays.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Akshay+Shetty&background=0369a1&color=fff';">
+                    <div class="absolute bottom-4 left-6">
+                        <span class="bg-sky-400 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase">Goal Machine</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h4 class="text-2xl font-black uppercase italic">Akshay Shetty</h4>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Attacker</p>
+                    <div class="flex justify-between mt-6 pt-6 border-t border-slate-100">
+                         <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">League</p>
+                            <p class="text-xl font-black">100%</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">Team Practice</p>
+                            <p class="text-xl font-black">Yes</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">Traits</p>
+                            <p class="text-xl font-black text-blue-600">Finisher</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="min-w-[320px] md:min-w-[380px] snap-start bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition hover:scale-[1.02]">
+            <div class="bg-slate-900 h-44 relative">
+                    <img src="img/akashc.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Akash+C&background=1e3a8a&color=fff';">
+                    <div class="absolute bottom-4 left-6">
+                        <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase">Top Goalkeeper</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h4 class="text-2xl font-black uppercase italic">Akash C</h4>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Goal Keeper</p>
+                    <div class="flex justify-between mt-6 pt-6 border-t border-slate-100">
+                       <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">League</p>
+                            <p class="text-xl font-black">100%</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">Team Practice</p>
+                            <p class="text-xl font-black">Yes</p>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-[10px] uppercase font-black text-slate-400">Traits</p>
+                            <p class="text-xl font-black text-amber-600 italic">Stopper</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+        <div class="min-w-[320px] md:min-w-[380px] snap-start bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition hover:scale-[1.02]">
+            <div class="bg-slate-900 h-44 relative">
+                <img src="img/mayank.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Mayank&background=0f172a&color=fff&size=512';">
+                <div class="absolute bottom-4 left-6">
+                    <span class="bg-[#fbbf24] text-black px-3 py-1 rounded-lg text-[10px] font-black uppercase">Top Scorer S4</span>
+                </div>
+            </div>
+            <div class="p-8">
+                <h4 class="text-2xl font-black uppercase italic">Mayank</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Mavericks Forward</p>
+                <div class="flex justify-between mt-6 pt-6 border-t border-slate-100">
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Goals</p>
+                        <p class="text-xl font-black">07</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Matches</p>
+                        <p class="text-xl font-black">08</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Base</p>
+                        <p class="text-sm font-black text-amber-500">1500 Pts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-[320px] md:min-w-[380px] snap-start bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition hover:scale-[1.02]">
+            <div class="bg-sky-900 h-44 relative">
+                <img src="img/stephen.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Stephen+Dsouza&background=0369a1&color=fff&size=512';">
+                <div class="absolute bottom-4 left-6">
+                    <span class="bg-sky-400 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase">Goal Machine</span>
+                </div>
+            </div>
+            <div class="p-8">
+                <h4 class="text-2xl font-black uppercase italic">Stephen Dsouza</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Falcons FC Attacker</p>
+                <div class="flex justify-between mt-6 pt-6 border-t border-slate-100">
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">S3 Goals</p>
+                        <p class="text-xl font-black">08</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Points</p>
+                        <p class="text-xl font-black">42</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Base</p>
+                        <p class="text-sm font-black text-amber-500">1800 Pts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-[320px] md:min-w-[380px] snap-start bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition hover:scale-[1.02]">
+            <div class="bg-blue-900 h-44 relative">
+                <img src="img/vishal.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Vishal+Farro&background=1e3a8a&color=fff&size=512';">
+                <div class="absolute bottom-4 left-6">
+                    <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase">Club Captain</span>
+                </div>
+            </div>
+            <div class="p-8">
+                <h4 class="text-2xl font-black uppercase italic">Vishal Farro</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">United Defender</p>
+                <div class="flex justify-between mt-6 pt-6 border-t border-slate-100">
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Apps</p>
+                        <p class="text-xl font-black">25</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Impact</p>
+                        <p class="text-xl font-black">Elite</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Base</p>
+                        <p class="text-sm font-black text-amber-500">1600 Pts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-[320px] md:min-w-[380px] snap-start bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition hover:scale-[1.02]">
+            <div class="bg-slate-800 h-44 relative">
+                <img src="img/shinde.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Abhijeet+Shinde&background=1e293b&color=fff&size=512';">
+                <div class="absolute bottom-4 left-6">
+                    <span class="bg-amber-600 text-white px-3 py-1 rounded-lg text-[10px] font-black uppercase">Record Signing</span>
+                </div>
+            </div>
+            <div class="p-8">
+                <h4 class="text-2xl font-black uppercase italic">Abhijeet Shinde</h4>
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Mavericks Playmaker</p>
+                <div class="flex justify-between mt-6 pt-6 border-t border-slate-100">
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Award</p>
+                        <p class="text-sm font-black uppercase">Best MF</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Points</p>
+                        <p class="text-xl font-black">15</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-[10px] uppercase font-black text-slate-400">Base</p>
+                        <p class="text-sm font-black text-amber-500">2000 Pts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+<script>
+function scrollMarquee(direction) {
+    const slider = document.getElementById('marqueeSlider');
+    const scrollAmount = 400; // Adjust based on card width
+    slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+}
+</script>
+
+        <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
+    <div class="p-8 border-b border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+        <h3 class="text-xl font-black uppercase italic tracking-widest">Master Player Directory</h3>
+        <div class="flex gap-2">
+            <input type="text" id="playerSearch" onkeyup="searchPlayers()" placeholder="Search Player..." class="px-6 py-2 rounded-full border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+        </div>
+    </div>
+    
+    <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse" id="playerTable">
+            <thead class="bg-slate-50 text-[10px] font-black uppercase tracking-widest text-slate-400 border-b border-slate-100">
+                <tr>
+                    <th class="px-8 py-4">Player</th>
+                    <th class="px-8 py-4">Position</th>
+                    <th class="px-8 py-4">Last Team</th>
+                    <th class="px-8 py-4 text-center">Goals</th>
+                    <th class="px-8 py-4 text-center">Assists</th>
+                    <th class="px-8 py-4">Legacy</th>
+                    <th class="px-8 py-4">Status</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody" class="text-sm font-bold divide-y divide-slate-50">
+                </tbody>
+        </table>
+    </div>
+
+    <div class="p-8 bg-slate-50 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-xs font-bold text-slate-400 uppercase italic" id="pageInfo">Showing 1 to 10 of 120 players</p>
+        <div class="flex items-center gap-2" id="pagination">
+            </div>
+    </div>
+</div>
+
+<script>
+// 1. Mock Data (Extend this with your full KPL dataset)
+const players = [
+    { name: "Abhijeet Shinde", pos: "Midfielder", team: "Mavericks Knights", g: 3, a: 2, legacy: "Best MF S2", status: "Available" },
+    { name: "Abhinav Jha", pos: "Forward", team: "Falcons FC", g: 7, a: 5, legacy: "Catalyst", status: "Retained" },
+    { name: "Zahoor Baba", pos: "Attacker", team: "Kharghar United", g: 0, a: 1, legacy: "Workhorse", status: "Available" },
+    { name: "Stephen Dsouza", pos: "Forward", team: "Falcons FC", g: 8, a: 3, legacy: "Lethal", status: "Available" },
+    { name: "Vishal Farro", pos: "Defender", team: "Kharghar United", g: 2, a: 4, legacy: "Leader", status: "Retained" },
+    { name: "Mayank", pos: "Forward", team: "Mavericks United", g: 7, a: 0, legacy: "Dribbler", status: "Available" },
+    { name: "Narendra Sharma", pos: "Midfielder", team: "Mavericks United", g: 9, a: 8, legacy: "Maestro", status: "Available" },
+    { name: "Satinder Singh Mann", pos: "Defender", team: "Kharghar United", g: 0, a: 0, legacy: "Champion S2", status: "Available" },
+    { name: "Kunal Chakraborty", pos: "Midfielder", team: "Falcons FC", g: 0, a: 4, legacy: "Best MF S1", status: "Available" },
+    { name: "Bruce", pos: "Midfielder", team: "Falcons FC", g: 2, a: 7, legacy: "Architect", status: "Available" },
+    { name: "Fayaz Khan", pos: "Forward", team: "Kharghar United", g: 12, a: 4, legacy: "Scorpion", status: "Available" },
+    { name: "Hemant Chore", pos: "Defender", team: "Mavericks Knights", g: 0, a: 1, legacy: "Hardworking", status: "Available" }
+];
+
+let currentPage = 1;
+const rowsPerPage = 5;
+
+function displayTable(page) {
+    const start = (page - 1) * rowsPerPage;
+    const end = start + rowsPerPage;
+    const paginatedItems = players.slice(start, end);
+
+    const tableBody = document.getElementById('tableBody');
+    tableBody.innerHTML = "";
+
+    paginatedItems.forEach(player => {
+        const row = `
+            <tr class="hover:bg-slate-50 transition">
+                <td class="px-8 py-4 flex items-center gap-3">
+                    <div class="h-8 w-8 bg-slate-200 rounded-full flex items-center justify-center text-[10px] text-slate-500">${player.name.charAt(0)}</div>
+                    ${player.name}
+                </td>
+                <td class="px-8 py-4 text-slate-500">${player.pos}</td>
+                <td class="px-8 py-4">${player.team}</td>
+                <td class="px-8 py-4 text-center">${player.g || '--'}</td>
+                <td class="px-8 py-4 text-center">${player.a || '--'}</td>
+                <td class="px-8 py-4 italic ${player.legacy.includes('Best') ? 'text-amber-600' : 'text-slate-400'}">${player.legacy}</td>
+                <td class="px-8 py-4">
+                    <span class="px-3 py-1 rounded-full text-[10px] uppercase ${player.status === 'Retained' ? 'bg-teal-100 text-teal-600' : 'bg-slate-100 text-slate-500'}">
+                        ${player.status}
+                    </span>
+                </td>
+            </tr>`;
+        tableBody.innerHTML += row;
+    });
+
+    updatePagination();
+    document.getElementById('pageInfo').innerText = `Showing ${start + 1} to ${Math.min(end, players.length)} of ${players.length} players`;
+}
+
+function updatePagination() {
+    const pageCount = Math.ceil(players.length / rowsPerPage);
+    const paginationWrapper = document.getElementById('pagination');
+    paginationWrapper.innerHTML = "";
+
+    // Previous Button
+    const prevBtn = `<button onclick="changePage(${currentPage - 1})" class="px-4 py-2 text-xs font-bold uppercase rounded-lg border border-slate-200 hover:bg-slate-100 transition ${currentPage === 1 ? 'opacity-30 pointer-events-none' : ''}">Prev</button>`;
+    
+    // Page Numbers
+    let pages = "";
+    for (let i = 1; i <= pageCount; i++) {
+        pages += `<button onclick="changePage(${i})" class="h-8 w-8 text-xs font-bold rounded-lg transition ${currentPage === i ? 'bg-teal-500 text-white shadow-lg' : 'hover:bg-slate-100'}">${i}</button>`;
+    }
+
+    // Next Button
+    const nextBtn = `<button onclick="changePage(${currentPage + 1})" class="px-4 py-2 text-xs font-bold uppercase rounded-lg border border-slate-200 hover:bg-slate-100 transition ${currentPage === pageCount ? 'opacity-30 pointer-events-none' : ''}">Next</button>`;
+
+    paginationWrapper.innerHTML = prevBtn + pages + nextBtn;
+}
+
+function changePage(page) {
+    currentPage = page;
+    displayTable(currentPage);
+}
+
+// Search Logic (Simple Filter)
+function searchPlayers() {
+    const input = document.getElementById('playerSearch').value.toLowerCase();
+    const rows = document.querySelectorAll('#tableBody tr');
+    
+    rows.forEach(row => {
+        const name = row.querySelector('td').innerText.toLowerCase();
+        row.style.display = name.includes(input) ? "" : "none";
+    });
+}
+
+// Initial Load
+displayTable(currentPage);
+</script>
+
+    </main>
+
+    <footer class="bg-slate-900 py-12 px-6 text-white text-center">
+        <p class="text-[10px] font-black uppercase tracking-widest opacity-40">Official KPL Season 4 Mega Auction Portal</p>
+        <p class="mt-4 italic font-bold">Kharghar Premier League &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
