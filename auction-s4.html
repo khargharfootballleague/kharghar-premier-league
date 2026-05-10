@@ -359,18 +359,23 @@ function scrollMarquee(direction) {
 <script>
 // 1. Mock Data (Extend this with your full KPL dataset)
 const players = [
-    { name: "Abhijeet Shinde", pos: "Midfielder", team: "Mavericks Knights", g: 3, a: 2, legacy: "Best MF S2", status: "Available" },
-    { name: "Abhinav Jha", pos: "Forward", team: "Falcons FC", g: 7, a: 5, legacy: "Catalyst", status: "Retained" },
-    { name: "Zahoor Baba", pos: "Attacker", team: "Kharghar United", g: 0, a: 1, legacy: "Workhorse", status: "Available" },
-    { name: "Stephen Dsouza", pos: "Forward", team: "Falcons FC", g: 8, a: 3, legacy: "Lethal", status: "Available" },
-    { name: "Vishal Farro", pos: "Defender", team: "Kharghar United", g: 2, a: 4, legacy: "Leader", status: "Retained" },
-    { name: "Mayank", pos: "Forward", team: "Mavericks United", g: 7, a: 0, legacy: "Dribbler", status: "Available" },
-    { name: "Narendra Sharma", pos: "Midfielder", team: "Mavericks United", g: 9, a: 8, legacy: "Maestro", status: "Available" },
-    { name: "Satinder Singh Mann", pos: "Defender", team: "Kharghar United", g: 0, a: 0, legacy: "Champion S2", status: "Available" },
-    { name: "Kunal Chakraborty", pos: "Midfielder", team: "Falcons FC", g: 0, a: 4, legacy: "Best MF S1", status: "Available" },
-    { name: "Bruce", pos: "Midfielder", team: "Falcons FC", g: 2, a: 7, legacy: "Architect", status: "Available" },
-    { name: "Fayaz Khan", pos: "Forward", team: "Kharghar United", g: 12, a: 4, legacy: "Scorpion", status: "Available" },
-    { name: "Hemant Chore", pos: "Defender", team: "Mavericks Knights", g: 0, a: 1, legacy: "Hardworking", status: "Available" }
+    { name: "Abhijeet Shinde", pos: "Midfielder", team: "Mavericks Knights FC", g: 3, a: 16, legacy: "Box to Box", status: "Available" },
+    { name: "Abhinav Jha", pos: "Defender", team: "Falcons FC Kharghar", g: 7, a: 4, legacy: "Box to Box", status: "Retained" },
+    { name: "Abhishek KD", pos: "Attacker", team: "Real Kharghar FC", g: 18, a: 11, legacy: "Finisher", status: "Available" },
+	{ name: "Adarsh CV", pos: "Midfielder", team: "Real Kharghar FC", g: 14, a: 9, legacy: "Box to Box", status: "Available" },
+	{ name: "Adil Petkar", pos: "Midfielder", team: "Real Kharghar FC", g: 14, a: 11, legacy: "Dribbler", status: "Available" },
+	{ name: "Akash Kanturia", pos: "Midfielder", team: "Kharghar United FC", g: 6, a: 4, legacy: "Playmaker", status: "Available" },
+	{ name: "Akhil Nair", pos: "Midfielder", team: "Alpha Wolves United FC", g: 20, a: 21, legacy: "Playmaker", status: "Retained" },
+	{ name: "Amar Bhise", pos: "Midfielder", team: "Atletico de Kharghar FC", g: 5, a: 4, legacy: "Box to Box", status: "Retained" },
+    { name: "Stephen Dsouza", pos: "Forward", team: "Falcons FC Kharghar", g: 8, a: 3, legacy: "Lethal", status: "Retained" },
+    { name: "Vishal Farro", pos: "Midfielder", team: "Kharghar United FC", g: 2, a: 4, legacy: "Leader", status: "Available" },
+    { name: "Mayank Chauhan", pos: "Forward", team: "Mavericks Knights FC", g: 7, a: 0, legacy: "Dribbler", status: "Available" },
+    { name: "Narendra Sharma", pos: "Midfielder", team: "Mavericks Knights FC", g: 9, a: 8, legacy: "Maestro", status: "Available" },
+    { name: "Satinder Singh Mann", pos: "Defender", team: "Kharghar United FC", g: 0, a: 0, legacy: "Defence", status: "Available" },
+    { name: "Kunal Chakraborty", pos: "Midfielder", team: "Falcons FC Kharghar", g: 3, a: 7, legacy: "Playmaker", status: "Retained" },
+    { name: "Bruce Wilson", pos: "Midfielder", team: "Falcons FC", g: 5, a: 10, legacy: "Playmaker", status: "Available" },
+    { name: "Fayaz Khan", pos: "Forward", team: "Kharghar United", g: 27, a: 6, legacy: "Finisher", status: "Available" },
+    { name: "Hemant P Chore", pos: "Defender", team: "Mavericks Knights FC", g: 0, a: 1, legacy: "Hardworking", status: "Available" }
 ];
 
 let currentPage = 1;
@@ -385,11 +390,14 @@ function displayTable(page) {
     tableBody.innerHTML = "";
 
     paginatedItems.forEach(player => {
+	const profileLink = `playerprofile/${player.name.toLowerCase().replace(/\s+/g, '')}.html`;
         const row = `
             <tr class="hover:bg-slate-50 transition">
                 <td class="px-8 py-4 flex items-center gap-3">
                     <div class="h-8 w-8 bg-slate-200 rounded-full flex items-center justify-center text-[10px] text-slate-500">${player.name.charAt(0)}</div>
-                    ${player.name}
+                    <a href="${profileLink}" class="text-slate-900 hover:text-teal-600 transition decoration-teal-500/30 underline-offset-4 hover:underline">
+                        ${player.name}
+                    </a>
                 </td>
                 <td class="px-8 py-4 text-slate-500">${player.pos}</td>
                 <td class="px-8 py-4">${player.team}</td>
