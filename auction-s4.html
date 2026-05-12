@@ -377,25 +377,29 @@ function scrollMarquee(direction) {
 }
 </script>
 
-        <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
+<div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-slate-100">
     <div class="p-8 border-b border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
-        <h3 class="text-xl font-black uppercase italic tracking-widest">Master Player Directory</h3>
-        <div class="flex gap-2">
-            <input type="text" id="playerSearch" onkeyup="searchPlayers()" placeholder="Search Player..." class="px-6 py-2 rounded-full border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
+        <div>
+            <h3 class="text-xl font-black uppercase italic tracking-widest">Master Player Directory</h3>
+            <p class="text-[10px] font-bold text-slate-400 uppercase mt-1 md:hidden">Swipe right to view full stats →</p>
+        </div>
+        <div class="w-full md:w-auto">
+            <input type="text" id="playerSearch" onkeyup="searchPlayers()" placeholder="Search by name..." 
+                class="w-full px-6 py-2 rounded-full border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500">
         </div>
     </div>
     
     <div class="overflow-x-auto">
-        <table class="w-full text-left border-collapse" id="playerTable">
+        <table class="w-full text-left border-collapse min-w-[600px] md:min-w-full" id="playerTable">
             <thead class="bg-slate-50 text-[10px] font-black uppercase tracking-widest text-slate-400 border-b border-slate-100">
                 <tr>
-                    <th class="px-8 py-4">Player</th>
-                    <th class="px-8 py-4">Position</th>
-                    <th class="px-8 py-4">Last Team</th>
-                    <th class="px-8 py-4 text-center">Goals</th>
-                    <th class="px-8 py-4 text-center">Assists</th>
-                    <th class="px-8 py-4">Legacy</th>
-                    <th class="px-8 py-4">Status</th>
+                    <th class="px-6 md:px-8 py-4">Player</th>
+                    <th class="px-6 md:px-8 py-4">Pos</th>
+                    <th class="px-8 py-4 hidden lg:table-cell">Last Team</th>
+                    <th class="px-4 py-4 text-center">G</th>
+                    <th class="px-4 py-4 text-center hidden md:table-cell">A</th>
+                    <th class="px-8 py-4 hidden xl:table-cell">Legacy</th>
+                    <th class="px-6 md:px-8 py-4">Status</th>
                 </tr>
             </thead>
             <tbody id="tableBody" class="text-sm font-bold divide-y divide-slate-50">
@@ -404,15 +408,29 @@ function scrollMarquee(direction) {
     </div>
 
     <div class="p-8 bg-slate-50 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p class="text-xs font-bold text-slate-400 uppercase italic" id="pageInfo">Showing 1 to 10 of 120 players</p>
-        <div class="flex items-center gap-2" id="pagination">
-            </div>
+        <p class="text-xs font-bold text-slate-400 uppercase italic" id="pageInfo"></p>
+        <div class="flex items-center gap-2" id="pagination"></div>
     </div>
 </div>
 
+<style>
+    /* Prevent text wrapping in mobile view to keep rows consistent */
+    #playerTable td {
+        white-space: nowrap;
+    }
+    /* Subtle scrollbar for mobile */
+    .overflow-x-auto::-webkit-scrollbar {
+        height: 4px;
+    }
+    .overflow-x-auto::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+    }
+</style>
+
 <script>
 // 1. Mock Data (Extend this with your full KPL dataset)
-const players = [
+const allPlayers = [
     { name: "Adarsh CV", pos: "Midfielder", team: "Real Kharghar FC", g: 14, a: 9, legacy: "Box to Box", status: "Available" },
     { name: "Abhijeet Shinde", pos: "Midfielder", team: "Mavericks Knights FC", g: 3, a: 16, legacy: "Box to Box", status: "Available" },
     { name: "Abhinav Jha", pos: "Defender", team: "Falcons FC Kharghar", g: 7, a: 4, legacy: "Box to Box", status: "Retained" },
@@ -508,34 +526,45 @@ const players = [
     { name: "Hemant Ghadge", pos: "Goal Keeper", team: "", g: "", a: "", legacy: "", status: "Available" }
 ];
 
+let filteredPlayers = [...allPlayers]; // This holds the players currently being shown
 let currentPage = 1;
-const rowsPerPage = 5;
+const rowsPerPage = 10;
 
-function displayTable(page) {
-    const start = (page - 1) * rowsPerPage;
+
+function displayTable() {
+    const start = (currentPage - 1) * rowsPerPage;
     const end = start + rowsPerPage;
-    const paginatedItems = players.slice(start, end);
+    
+    // We now slice from the FILTERED list, not the master list
+    const paginatedItems = filteredPlayers.slice(start, end);
 
     const tableBody = document.getElementById('tableBody');
     tableBody.innerHTML = "";
 
+    if (paginatedItems.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="7" class="p-20 text-center text-slate-400 italic">No players found matching that search...</td></tr>`;
+    }
+
     paginatedItems.forEach(player => {
-	const profileLink = `playerprofile/${player.name.toLowerCase().replace(/\s+/g, '')}.html`;
+        const profileLink = `playerprofile/${player.name.toLowerCase().replace(/\s+/g, '')}.html`;
+        
         const row = `
             <tr class="hover:bg-slate-50 transition">
-                <td class="px-8 py-4 flex items-center gap-3">
-                    <div class="h-8 w-8 bg-slate-200 rounded-full flex items-center justify-center text-[10px] text-slate-500">${player.name.charAt(0)}</div>
-                    <a href="${profileLink}" class="text-slate-900 hover:text-teal-600 transition decoration-teal-500/30 underline-offset-4 hover:underline">
-                        ${player.name}
+                <td class="px-6 md:px-8 py-4">
+                    <a href="${profileLink}" class="flex items-center gap-3 group">
+                        <div class="h-8 w-8 bg-slate-100 rounded-full flex items-center justify-center text-[10px] text-slate-500 font-black group-hover:bg-teal-500 group-hover:text-white transition">
+                            ${player.name.charAt(0)}
+                        </div>
+                        <span class="text-slate-900 group-hover:text-teal-600 transition">${player.name}</span>
                     </a>
                 </td>
-                <td class="px-8 py-4 text-slate-500">${player.pos}</td>
-                <td class="px-8 py-4">${player.team}</td>
-                <td class="px-8 py-4 text-center">${player.g || '--'}</td>
-                <td class="px-8 py-4 text-center">${player.a || '--'}</td>
-                <td class="px-8 py-4 italic ${player.legacy.includes('Best') ? 'text-amber-600' : 'text-slate-400'}">${player.legacy}</td>
-                <td class="px-8 py-4">
-                    <span class="px-3 py-1 rounded-full text-[10px] uppercase ${player.status === 'Retained' ? 'bg-teal-100 text-teal-600' : 'bg-slate-100 text-slate-500'}">
+                <td class="px-6 md:px-8 py-4 text-slate-500 text-xs">${player.pos}</td>
+                <td class="px-8 py-4 hidden lg:table-cell text-slate-400">${player.team || '---'}</td>
+                <td class="px-4 py-4 text-center">${player.g !== "" ? player.g : '--'}</td>
+                <td class="px-4 py-4 text-center hidden md:table-cell">${player.a !== "" ? player.a : '--'}</td>
+                <td class="px-8 py-4 hidden xl:table-cell italic text-slate-400 font-medium">${player.legacy || 'New Entrant'}</td>
+                <td class="px-6 md:px-8 py-4">
+                    <span class="px-3 py-1 rounded-full text-[9px] uppercase ${player.status === 'Retained' ? 'bg-teal-100 text-teal-600' : 'bg-slate-100 text-slate-500'}">
                         ${player.status}
                     </span>
                 </td>
@@ -544,46 +573,45 @@ function displayTable(page) {
     });
 
     updatePagination();
-    document.getElementById('pageInfo').innerText = `Showing ${start + 1} to ${Math.min(end, players.length)} of ${players.length} players`;
+    
+    // Update the "Showing X of Y" text
+    const totalShown = filteredPlayers.length;
+    const currentEnd = Math.min(end, totalShown);
+    const currentStart = totalShown === 0 ? 0 : start + 1;
+    document.getElementById('pageInfo').innerText = `Showing ${currentStart} to ${currentEnd} of ${totalShown} players`;
 }
 
 function updatePagination() {
-    const pageCount = Math.ceil(players.length / rowsPerPage);
+    const pageCount = Math.ceil(filteredPlayers.length / rowsPerPage);
     const paginationWrapper = document.getElementById('pagination');
     paginationWrapper.innerHTML = "";
 
-    // Previous Button
-    const prevBtn = `<button onclick="changePage(${currentPage - 1})" class="px-4 py-2 text-xs font-bold uppercase rounded-lg border border-slate-200 hover:bg-slate-100 transition ${currentPage === 1 ? 'opacity-30 pointer-events-none' : ''}">Prev</button>`;
-    
-    // Page Numbers
-    let pages = "";
-    for (let i = 1; i <= pageCount; i++) {
-        pages += `<button onclick="changePage(${i})" class="h-8 w-8 text-xs font-bold rounded-lg transition ${currentPage === i ? 'bg-teal-500 text-white shadow-lg' : 'hover:bg-slate-100'}">${i}</button>`;
-    }
+    if (pageCount <= 1) return; // Hide pagination if only 1 page of results
 
-    // Next Button
-    const nextBtn = `<button onclick="changePage(${currentPage + 1})" class="px-4 py-2 text-xs font-bold uppercase rounded-lg border border-slate-200 hover:bg-slate-100 transition ${currentPage === pageCount ? 'opacity-30 pointer-events-none' : ''}">Next</button>`;
+    const prevBtn = `<button onclick="changePage(${currentPage - 1})" class="px-4 py-2 text-[10px] font-black uppercase rounded-lg border border-slate-200 hover:bg-white transition ${currentPage === 1 ? 'opacity-30 pointer-events-none' : ''}">Prev</button>`;
+    const nextBtn = `<button onclick="changePage(${currentPage + 1})" class="px-4 py-2 text-[10px] font-black uppercase rounded-lg border border-slate-200 hover:bg-white transition ${currentPage === pageCount ? 'opacity-30 pointer-events-none' : ''}">Next</button>`;
 
-    paginationWrapper.innerHTML = prevBtn + pages + nextBtn;
+    paginationWrapper.innerHTML = prevBtn + nextBtn;
 }
 
 function changePage(page) {
     currentPage = page;
-    displayTable(currentPage);
+    displayTable();
 }
 
-// Search Logic (Simple Filter)
 function searchPlayers() {
-    const input = document.getElementById('playerSearch').value.toLowerCase();
-    const rows = document.querySelectorAll('#tableBody tr');
+    const searchTerm = document.getElementById('playerSearch').value.toLowerCase();
     
-    rows.forEach(row => {
-        const name = row.querySelector('td').innerText.toLowerCase();
-        row.style.display = name.includes(input) ? "" : "none";
-    });
+    // Filter the master list
+    filteredPlayers = allPlayers.filter(player => 
+        player.name.toLowerCase().includes(searchTerm)
+    );
+    
+    // Reset to page 1 to show search results
+    currentPage = 1;
+    displayTable();
 }
 
-// Initial Load
 displayTable(currentPage);
 </script>
 
