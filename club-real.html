@@ -127,52 +127,218 @@
         </div> </div>
 </section>
 
-<!-- Protected Retentions Section -->
-<section id="retained-players" class="max-w-6xl mx-auto py-20 px-6">
-        <div class="mb-12 border-l-8 border-[#2D9F94] pl-6">
-            <h2 class="text-3xl font-black uppercase italic">Protected Retentions</h2>
-            <!-- <p class="text-gray-500 font-medium">The award-winners and record-breakers</p> -->
-        </div>
+<!-- ========================================== -->
+<!--       SEASON 4 SQUAD OVERVIEW BLOCK        -->
+<!-- ========================================== -->
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100 group">
-                <div class="h-48 bg-gradient-to-br from-[#0D1B3E] to-teal-900 flex items-center justify-center relative">
-                    <i class="fas fa-user-ninja text-white/10 text-9xl absolute"></i>
-					 <img src="playerprofile/img/dexter.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Dexter+Peters&background=0f172a&color=fff';">
+<!-- 1. PROTECTED RETENTIONS SECTION -->
+<section id="retained-players" class="mb-12">
+    <div class="flex items-center justify-between border-b pb-3 border-gray-200 mb-6">
+        <h2 class="text-2xl font-black uppercase italic tracking-tight text-gray-900">
+            <i class="fas fa-shield-alt text-[#2D9F94] mr-2"></i> Protected Retentions
+        </h2>
+        <span class="bg-amber-500/10 text-amber-700 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-amber-500/20">
+            Salary Cap Subtracted
+        </span>
+    </div>
+
+    <!-- Retained Grid (3 Players) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Rahul Raina -->
+        <div class="bg-white rounded-3xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full flex items-start justify-end p-3 text-amber-600 font-black italic text-[10px]">
+                RETAINED
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-slate-900 border border-white/10 overflow-hidden shrink-0">
+                    <img src="img-owners/owner-rahul.jpg" alt="Rahul Raina" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Rahul+Raina&background=0f172a&color=fbbf24';">
                 </div>
-                <div class="p-8 -mt-12 relative bg-white rounded-t-[2rem]">
-                    <h3 class="text-2xl font-black uppercase italic mb-1">Dexter Peters</h3>
-                    <p class="text-[#2D9F94] font-bold text-xs uppercase tracking-widest mb-6">Midfielder</p>
-                    <div class="grid grid-cols-2 gap-4 border-t pt-6">
-                        <div><p class="text-[10px] font-black text-gray-400 uppercase">Matches Played</p><p class="text-xl font-black">13</p></div>
-						<div><p class="text-[10px] font-black text-gray-400 uppercase">Goal Scored</p><p class="text-xl font-black">22</p></div>
-						<div><p class="text-[10px] font-black text-gray-400 uppercase">Goal Assists</p><p class="text-xl font-black">19</p></div>
+                <div>
+                    <h3 class="font-black uppercase text-gray-900 text-base leading-tight hover:text-[#2D9F94] transition">
+                        <a href="playerprofile/rahulraina.html">Rahul Raina</a>
+                    </h3>
+                    <p class="text-[#2D9F94] text-xs font-bold uppercase tracking-wide mt-0.5">Defender</p>
+                    <div class="flex items-center gap-3 mt-2 text-[11px] font-bold text-gray-400">
+                        <span><strong class="text-gray-700">G:</strong> 2</span>
+                        <span><strong class="text-gray-700">A:</strong> 5</span>
+                        <span class="bg-slate-100 px-1.5 py-0.5 rounded text-[9px] text-slate-500">Leader</span>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100 group">
-                <div class="h-48 bg-gradient-to-br from-[#0D1B3E] to-red-900 flex items-center justify-center relative">
-                    <i class="fas fa-bolt text-white/10 text-9xl absolute"></i>
-                    <img src="playerprofile/img/gaurav.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Gaurav+Shetty&background=0f172a&color=fff';">
-     
+        <!-- Dexter Peters -->
+        <div class="bg-white rounded-3xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full flex items-start justify-end p-3 text-amber-600 font-black italic text-[10px]">
+                RETAINED
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-slate-900 border border-white/10 overflow-hidden shrink-0">
+                    <img src="playerprofile/img/dexter.jpg" alt="Dexter Peters" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Dexter+Peters&background=0f172a&color=fbbf24';">
                 </div>
-                <div class="p-8 -mt-12 relative bg-white rounded-t-[2rem]">
-                    <h3 class="text-2xl font-black uppercase italic mb-1">Gaurav Shetty</h3>
-                    <p class="text-[#2D9F94] font-bold text-xs uppercase tracking-widest mb-6">Attacker</p>
-                    <div class="grid grid-cols-2 gap-4 border-t pt-6">
-                        <div><p class="text-[10px] font-black text-gray-400 uppercase">Matches Played</p><p class="text-xl font-black">11</p></div>
-						<div><p class="text-[10px] font-black text-gray-400 uppercase">Goal Scored</p><p class="text-xl font-black">19</p></div>
-						<div><p class="text-[10px] font-black text-gray-400 uppercase">Goal Assists</p><p class="text-xl font-black">6</p></div>
-                    </div>
+                <div>
+                    <h3 class="font-black uppercase text-gray-900 text-base leading-tight hover:text-[#2D9F94] transition">
+                        <a href="playerprofile/dexterpeters.html">Dexter Peters</a>
+                    </h3>
+                    <p class="text-[#2D9F94] text-xs font-bold uppercase tracking-wide mt-0.5">Midfielder</p>
+                    <div class="flex items-center gap-3 mt-2 text-[11px] font-bold text-gray-400">
+                        <span><strong class="text-gray-700">G:</strong> 22</span>
+                        <span><strong class="text-gray-700">A:</strong> 19</span>
+                        <span class="bg-slate-100 px-1.5 py-0.5 rounded text-[9px] text-slate-500">General</span>
                     </div>
                 </div>
             </div>
-
         </div>
-    </section>
-	
+
+        <!-- Gaurav Shetty -->
+        <div class="bg-white rounded-3xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full flex items-start justify-end p-3 text-amber-600 font-black italic text-[10px]">
+                RETAINED
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-2xl bg-slate-900 border border-white/10 overflow-hidden shrink-0">
+                    <img src="playerprofile/img/gaurav.jpg" alt="Gaurav Shetty" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Gaurav+Shetty&background=0f172a&color=fbbf24';">
+                </div>
+                <div>
+                    <h3 class="font-black uppercase text-gray-900 text-base leading-tight hover:text-[#2D9F94] transition">
+                        <a href="playerprofile/gauravshetty.html">Gaurav Shetty</a>
+                    </h3>
+                    <p class="text-[#2D9F94] text-xs font-bold uppercase tracking-wide mt-0.5">Forward</p>
+                    <div class="flex items-center gap-3 mt-2 text-[11px] font-bold text-gray-400">
+                        <span><strong class="text-gray-700">G:</strong> 19</span>
+                        <span><strong class="text-gray-700">A:</strong> 6</span>
+                        <span class="bg-slate-100 px-1.5 py-0.5 rounded text-[9px] text-slate-500">Lethal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 2. CORE ROSTER SECTION (AUCTION SOCKS & NEW ENTRANTS) -->
+<section id="core-roster" class="mb-12">
+    <div class="flex items-center justify-between border-b pb-3 border-gray-200 mb-6">
+        <h2 class="text-2xl font-black uppercase italic tracking-tight text-gray-900">
+            <i class="fas fa-gavel text-[#2D9F94] mr-2"></i> Season 4 Roster
+        </h2>
+        <span class="bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-slate-200">
+            S4 Auction Additions
+        </span>
+    </div>
+
+    <!-- Core Grid (8 Players) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Aditya G -->
+        <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div class="w-full h-40 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                <img src="playerprofile/img/adityagolatkar.jpg" alt="Aditya G" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Aditya+G&background=0f172a&color=2D9F94';">
+            </div>
+            <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-[#2D9F94] transition">
+                <a href="playerprofile/adityagolatkar.html">Aditya G</a>
+            </h3>
+            <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Midfielder</p>
+            <p class="text-[10px] text-amber-600 font-bold uppercase tracking-wider mt-2 italic"><i class="fas fa-star mr-1"></i> New Entrant Pool</p>
+        </div>
+
+        <!-- Abhishek KD -->
+        <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div class="w-full h-40 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                <img src="playerprofile/img/abhishekkd.jpg" alt="Abhishek KD" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Abhishek+KD&background=0f172a&color=2D9F94';">
+            </div>
+            <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-[#2D9F94] transition">
+                <a href="playerprofile/abhishekkd.html">Abhishek KD</a>
+            </h3>
+            <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Attacker</p>
+            <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                <span>G: 18</span> <span>A: 11</span> <span class="text-slate-500">Finisher</span>
+            </div>
+        </div>
+
+        <!-- Dhananjay -->
+        <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div class="w-full h-40 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                <img src="playerprofile/img/dhananjaydar.jpg" alt="Dhananjay" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Dhananjay&background=0f172a&color=2D9F94';">
+            </div>
+            <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-[#2D9F94] transition">
+                <a href="playerprofile/dhananjaydar.html">Dhananjay</a>
+            </h3>
+            <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Midfielder</p>
+            <p class="text-[10px] text-amber-600 font-bold uppercase tracking-wider mt-2 italic"><i class="fas fa-star mr-1"></i> New Entrant Pool</p>
+        </div>
+
+        <!-- Madan T -->
+        <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div class="w-full h-40 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                <img src="playerprofile/img/madantakalikar.jpg" alt="Madan T" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Madan+T&background=0f172a&color=2D9F94';">
+            </div>
+            <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-[#2D9F94] transition">
+                <a href="playerprofile/madantakalikar.html">Madan T</a>
+            </h3>
+            <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Midfielder</p>
+            <p class="text-[10px] text-amber-600 font-bold uppercase tracking-wider mt-2 italic"><i class="fas fa-award mr-1"></i> Santosh Trophy Vet</p>
+        </div>
+
+        <!-- Sahil -->
+        <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div class="w-full h-40 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                <img src="playerprofile/img/sahil.jpg" alt="Sahil" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Sahil&background=0f172a&color=2D9F94';">
+            </div>
+            <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-[#2D9F94] transition">
+                <a href="playerprofile/sahilwasan.html">Sahil</a>
+            </h3>
+            <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">GoalKeeper</p>
+            <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                <span>G: 0</span> <span>A: 1</span> <span class="text-slate-500">Stopper</span>
+            </div>
+        </div>
+
+        <!-- Zahoor -->
+        <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div class="w-full h-40 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                <img src="playerprofile/img/zahoorbaba.jpg" alt="Zahoor" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Zahoor&background=0f172a&color=2D9F94';">
+            </div>
+            <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-[#2D9F94] transition">
+                <a href="playerprofile/zahoorbaba.html">Zahoor</a>
+            </h3>
+            <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Forward</p>
+            <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                <span>G: 8</span> <span>A: 3</span> <span class="text-slate-500">Finisher</span>
+            </div>
+        </div>
+
+        <!-- Bikram -->
+        <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div class="w-full h-40 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                <img src="playerprofile/img/bikram.jpg" alt="Bikram" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Bikram&background=0f172a&color=2D9F94';">
+            </div>
+            <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-[#2D9F94] transition">
+                <a href="playerprofile/bikramhandoo.html">Bikram</a>
+            </h3>
+            <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Defender</p>
+            <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                <span>G: 0</span> <span>A: 0</span> <span class="text-slate-500">Defence</span>
+            </div>
+        </div>
+
+        <!-- Dinesh S -->
+        <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div class="w-full h-40 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                <img src="playerprofile/img/dineshshetty.jpg" alt="Dinesh S" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Dinesh+S&background=0f172a&color=2D9F94';">
+            </div>
+            <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-[#2D9F94] transition">
+                <a href="playerprofile/dineshshetty.html">Dinesh S</a>
+            </h3>
+            <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Forward</p>
+            <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                <span>G: 0</span> <span>A: 1</span> <span class="text-slate-500">Utility</span>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     <section class="max-w-6xl mx-auto py-20 px-6">
         <div class="mb-12 border-l-8 border-[#2D9F94] pl-6">
