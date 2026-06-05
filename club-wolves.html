@@ -9,7 +9,8 @@
 </head>
 <body class="bg-gray-50 text-gray-900">
 
-<nav class="bg-white text-gray-900 py-3 px-6 sticky top-0 z-50 flex justify-between items-center shadow-md">
+    <!-- Integrated Navigation -->
+    <nav class="bg-white text-gray-900 py-3 px-6 sticky top-0 z-50 flex justify-between items-center shadow-md">
         <div class="flex items-center gap-3">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="img-team-logo/kpllogo.jpg" alt="KPL Logo" class="h-12 w-auto">
@@ -19,47 +20,39 @@
             </a>
         </div>
         <div class="flex space-x-6 font-semibold uppercase text-xs tracking-wider items-center">
-        <a href="index.html" class="hover:text-[#2D9F94] transition">Home</a>
-		
-		<a href="clubs.html" class="hover:text-[#2D9F94] transition">Clubs</a>
-		
-		<a href="records.html" class="hover:text-[#2D9F94] transition">Records</a>
-		<div class="relative group">
-            <button class="hover:text-[#2D9F94] transition flex items-center gap-1 pb-4 mt-4">
-                History <i class="fas fa-chevron-down text-[10px]"></i>
-            </button>
+            <a href="index.html" class="hover:text-[#2D9F94] transition">Home</a>
+            <a href="clubs.html" class="hover:text-[#2D9F94] transition">Clubs</a>
+            <a href="records.html" class="hover:text-[#2D9F94] transition">Records</a>
             
-            <div class="absolute hidden group-hover:block bg-white border border-gray-200 mt-0 py-2 w-56 rounded-lg shadow-2xl right-0 z-[100]">
-
-                <a href="season3.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
-                    <span class="block font-bold">Season 3</span>
-                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
-                </a>
-                <a href="season2.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
-                    <span class="block font-bold">Season 2</span>
-                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Atletico De Kharghar</span>
-                </a>
-                <a href="season1.html" class="block px-4 py-3 hover:bg-gray-50">
-                    <span class="block font-bold">Season 1</span>
-                    <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
-                </a>
-				<a href="stats.html" class="block px-4 py-3 hover:bg-gray-50">
-                    <span class="block font-bold">Player Stats</span>
-                </a>
+            <div class="relative group">
+                <button class="hover:text-[#2D9F94] transition flex items-center gap-1 pb-4 mt-4">
+                    History <i class="fas fa-chevron-down text-[10px]"></i>
+                </button>
+                <div class="absolute hidden group-hover:block bg-white border border-gray-200 mt-0 py-2 w-56 rounded-lg shadow-2xl right-0 z-[100]">
+                    <a href="season3.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
+                        <span class="block font-bold">Season 3</span>
+                        <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
+                    </a>
+                    <a href="season2.html" class="block px-4 py-3 hover:bg-gray-50 border-b border-gray-50">
+                        <span class="block font-bold">Season 2</span>
+                        <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Atletico De Kharghar</span>
+                    </a>
+                    <a href="season1.html" class="block px-4 py-3 hover:bg-gray-50">
+                        <span class="block font-bold">Season 1</span>
+                        <span class="text-[10px] text-[#2D9F94] font-bold uppercase">Winner: Real Kharghar FC</span>
+                    </a>
+                    <a href="stats.html" class="block px-4 py-3 hover:bg-gray-50">
+                        <span class="block font-bold">Player Stats</span>
+                    </a>
+                </div>
             </div>
-        </div>
-		
 
-        <a href="https://www.instagram.com/khargharpremierleague/" target="_blank" class="text-pink-600">
-            <i class="fab fa-instagram text-xl"></i>
-        </a>
-		
-		<a href="https://www.youtube.com/@KhargharPremierLeague" target="_blank" class="text-pink-600">
-            <i class="fab fa-youtube text-xl"></i>
-        </a>
+            <a href="https://www.instagram.com/khargharpremierleague/" target="_blank" class="text-pink-600"><i class="fab fa-instagram text-xl"></i></a>
+            <a href="https://www.youtube.com/@KhargharPremierLeague" target="_blank" class="text-red-600"><i class="fab fa-youtube text-xl"></i></a>
         </div>
     </nav>
 
+    <!-- Header Block -->
     <header class="bg-[#0D1B3E] text-white py-20 px-6 relative overflow-hidden">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 relative z-10">
             <div class="relative">
@@ -73,160 +66,238 @@
         </div>
     </header>
 	
-	<section class="bg-white py-16 border-b border-gray-100">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row items-center md:items-start gap-12 bg-gray-50 rounded-[3rem] p-8 md:p-12 shadow-inner border border-gray-100">
-            
-            <div class="relative group shrink-0">
-                <div class="absolute -inset-1 bg-gradient-to-tr from-[#2D9F94] to-[#0D1B3E] rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                <div class="relative h-48 w-48 md:h-56 md:w-56 rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                    <img 
-                        src="img-owners/owner-ratish.jpg" 
-                        alt="Mr. Ratish Nair" 
-                        class="h-full w-full object-cover group-hover:scale-110 transition duration-500"
-                        onerror="this.src='img-team-logo/Wolves.png'; this.style.padding='20px';"
-                    >
-                    <div class="absolute inset-0 bg-gray-200 flex items-center justify-center text-gray-400 -z-10">
-                        <i class="fas fa-user text-5xl"></i>
+    <!-- Ownership Block -->
+    <section class="bg-white py-16 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-12 bg-gray-50 rounded-[3rem] p-8 md:p-12 shadow-inner border border-gray-100">
+                <div class="relative group shrink-0">
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-[#2D9F94] to-[#0D1B3E] rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <div class="relative h-48 w-48 md:h-56 md:w-56 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                        <img src="img-owners/owner-ratish.jpg" alt="Mr. Ratish Nair" class="h-full w-full object-cover object-top group-hover:scale-110 transition duration-500" onerror="this.src='img-team-logo/Wolves.png'; this.style.padding='20px';">
                     </div>
                 </div>
-            </div>
-
-            <div class="text-center md:text-left flex-1">
-                <div class="inline-flex items-center gap-2 bg-white px-4 py-1 rounded-full shadow-sm border border-gray-100 mb-6">
-                    <span class="relative flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
-                    </span>
-                    <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Club Ownership</span>
+                <div class="text-center md:text-left flex-1">
+                    <div class="inline-flex items-center gap-2 bg-white px-4 py-1 rounded-full shadow-sm border border-gray-100 mb-6">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                        </span>
+                        <span class="text-[10px] font-black text-gray-400 uppercase tracking-widest">Club Ownership & Playing Leadership</span>
+                    </div>
+                    <h3 class="text-4xl font-black uppercase italic tracking-tighter text-gray-900 mb-2">
+                        <a href="profile-ratishnair.html" class="hover:text-blue-600 transition">Ratish Nair</a>
+                    </h3>
+                    <p class="text-[#2D9F94] font-bold text-lg mb-6 uppercase tracking-tight">OWNER / FORWARD, Alpha Wolves United FC</p>
+                    <div class="max-w-xl text-gray-500 text-sm leading-relaxed font-medium">
+                        "Building a legacy of tactical discipline, continuous frontline presence, and homegrown talent."
+                    </div>
                 </div>
-                
-                <h3 class="text-4xl font-black uppercase italic tracking-tighter text-gray-900 mb-2">
-                    Mr. Ratish Nair
-                </h3>
-                <p class="text-[#2D9F94] font-bold text-lg mb-6 uppercase tracking-tight">OWNER, Alpha Wolves United FC</p>
-                
-                <div class="max-w-xl text-gray-500 text-sm leading-relaxed font-medium">
-                    "Building a legacy of tactical discipline and homegrown talent."
-                </div>
-                
-                <div class="mt-8 flex justify-center md:justify-start gap-4">
-                    <a href="#" class="h-10 w-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-blue-600 hover:shadow-lg transition">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="h-10 w-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-gray-400 hover:text-pink-600 hover:shadow-lg transition">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
+            </div> 
+        </div>
+    </section>
 
-        </div> </div>
-</section>
-
-    
-
-    <section class="max-w-6xl mx-auto py-20 px-6">
+    <!-- 1. PROTECTED RETENTIONS CONTAINER -->
+    <section class="max-w-6xl mx-auto pt-20 px-6">
         <div class="mb-12 border-l-8 border-blue-900 pl-6">
             <h2 class="text-3xl font-black uppercase italic">The Alpha Core Retentions</h2>
-            <p class="text-gray-500 font-medium">The most clinical lineup in KPL history</p>
+            <p class="text-gray-500 font-medium">Protected veterans retained from the Season 3 operational run</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
+            <!-- Rituraj Fartyal -->
             <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100 group">
-                <div class="h-40 bg-blue-900 flex items-center justify-center relative">
-				<img src="playerprofile/img/rituraj.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Ayan+Saha&background=0f172a&color=fff';">
-                
+                <div class="h-48 bg-blue-900 overflow-hidden relative">
+                    <img src="playerprofile/img/rituraj.jpg" class="h-full w-full object-cover object-top opacity-70 group-hover:scale-105 transition duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Rituraj+Fartyal&background=0f172a&color=fff';">
                     <span class="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded absolute top-6 right-6 italic">S1 BEST PLAYER</span>
                 </div>
                 <div class="p-8 -mt-10 relative bg-white rounded-t-[2rem]">
-                    <h3 class="text-2xl font-black uppercase italic">Rituraj</h3>
+                    <h3 class="text-2xl font-black uppercase italic hover:text-blue-600 transition">
+                        <a href="profile-riturajfartyal.html">Rituraj Fartyal</a>
+                    </h3>
                     <p class="text-blue-700 font-bold text-xs uppercase tracking-widest mb-4">The Hat-Trick King</p>
                     <p class="text-xs text-gray-500 leading-relaxed mb-6">League record holder with 5 career hat-tricks.</p>
-                                        <div class="grid grid-cols-2 gap-4 border-t pt-6">
+                    <div class="grid grid-cols-2 gap-4 border-t pt-6">
                         <div><p class="text-[10px] font-black text-gray-400 uppercase">KPL Matches</p><p class="text-xl font-black">31</p></div>
                         <div><p class="text-[10px] font-black text-gray-400 uppercase">KPL Goals</p><p class="text-xl font-black">39</p></div>
                     </div>
                 </div>
-				</div>
+            </div>
 				
-				<div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100 group">
-                <div class="h-48 bg-gradient-to-br from-[#0D1B3E] to-gray-800 flex items-center justify-center relative">
-				<img src="playerprofile/img/sanu.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Ayan+Saha&background=0f172a&color=fff';">
-                
-                    <i class="fas fa-shield-virus text-white/10 text-9xl absolute"></i>
+            <!-- Sanu Daniel -->
+            <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100 group">
+                <div class="h-48 bg-gradient-to-br from-[#0D1B3E] to-gray-800 overflow-hidden relative">
+                    <img src="playerprofile/img/sanu.jpg" class="h-full w-full object-cover object-top opacity-70 group-hover:scale-105 transition duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Sanu+Daniel&background=0f172a&color=fff';">
                     <span class="bg-gray-200 text-gray-800 text-[10px] font-black px-3 py-1 rounded absolute top-6 right-6 italic">DEFENSIVE WALL</span>
                 </div>
-                <div class="p-8 -mt-12 relative bg-white rounded-t-[2rem]">
-                    <h3 class="text-2xl font-black uppercase italic mb-1">Sanu</h3>
-                    <p class="text-[#2D9F94] font-bold text-xs uppercase tracking-widest mb-6">Defensive Pillar</p>
+                <div class="p-8 -mt-10 relative bg-white rounded-t-[2rem]">
+                    <h3 class="text-2xl font-black uppercase italic mb-1 hover:text-blue-600 transition">
+                        <a href="profile-sinudaniel.html">Sanu Daniel</a>
+                    </h3>
+                    <p class="text-[#2D9F94] font-bold text-xs uppercase tracking-widest mb-4">Defensive Pillar</p>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-6">Maintains robust spatial coverage and line-cutting blocks.</p>
                     <div class="grid grid-cols-2 gap-4 border-t pt-6">
                         <div><p class="text-[10px] font-black text-gray-400 uppercase">KPL Points</p><p class="text-xl font-black">77</p></div>
                         <div><p class="text-[10px] font-black text-gray-400 uppercase">Cleansheets</p><p class="text-xl font-black">2</p></div>
                     </div>
                 </div>
-				
-				
             </div>
 			
-			<div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100 group">
-                <div class="h-48 bg-gradient-to-br from-[#0D1B3E] to-gray-800 flex items-center justify-center relative">
-				<img src="playerprofile/img/akhil.jpg" class="h-full w-full object-cover opacity-60" onerror="this.src='https://ui-avatars.com/api/?name=Ayan+Saha&background=0f172a&color=fff';">
-                
-                    <i class="fas fa-shield-virus text-white/10 text-9xl absolute"></i>
-                    <span class="bg-gray-200 text-gray-800 text-[10px] font-black px-3 py-1 rounded absolute top-6 right-6 italic">S2 BEST PLAYER</span>
+            <!-- Akhil -->
+            <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100 group">
+                <div class="h-48 bg-gradient-to-br from-[#0D1B3E] to-gray-800 overflow-hidden relative">
+                    <img src="playerprofile/img/akhil.jpg" class="h-full w-full object-cover object-top opacity-70 group-hover:scale-105 transition duration-500" onerror="this.src='https://ui-avatars.com/api/?name=Akhil&background=0f172a&color=fff';">
+                    <span class="bg-yellow-500 text-black text-[10px] font-black px-3 py-1 rounded absolute top-6 right-6 italic">S2 BEST PLAYER</span>
                 </div>
-                <div class="p-8 -mt-12 relative bg-white rounded-t-[2rem]">
-                    <h3 class="text-2xl font-black uppercase italic mb-1">Akhil Nair</h3>
-                    <p class="text-[#2D9F94] font-bold text-xs uppercase tracking-widest mb-6">The Midfield General</p>
+                <div class="p-8 -mt-10 relative bg-white rounded-t-[2rem]">
+                    <h3 class="text-2xl font-black uppercase italic mb-1 hover:text-blue-600 transition">
+                        <a href="profile-akhilnair.html">Akhil</a>
+                    </h3>
+                    <p class="text-[#2D9F94] font-bold text-xs uppercase tracking-widest mb-4">The Midfield General</p>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-6">Orchestrates transition tempo with exceptional long-range distributions.</p>
                     <div class="grid grid-cols-2 gap-4 border-t pt-6">
                         <div><p class="text-[10px] font-black text-gray-400 uppercase">KPL Goals</p><p class="text-xl font-black">30</p></div>
                         <div><p class="text-[10px] font-black text-gray-400 uppercase">Assists</p><p class="text-xl font-black">21</p></div>
                     </div>
                 </div>
-				
-				
             </div>
+        </div>
+    </section>
+		 
+    <!-- 2. CORE ROSTER SECTION (NEW AUCTION ACQUISITIONS) -->
+    <section class="max-w-6xl mx-auto pt-20 px-6">
+        <div class="mb-12 border-l-8 border-teal-500 pl-6">
+            <h2 class="text-3xl font-black uppercase italic text-gray-900">The Active Auction Core</h2>
+            <p class="text-gray-500 font-medium">Newly acquired assets selected to complete the Season 4 layout</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- ANKIT MISHRA -->
+            <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-md hover:shadow-lg transition">
+                <div class="w-full h-44 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                    <img src="playerprofile/img/ankit.jpg" alt="ANKIT MISHRA" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Ankit+Mishra&background=0D1B3E&color=fff';">
+                </div>
+                <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-blue-600 transition">
+                    <a href="profile-ankitmishra.html">ANKIT MISHRA</a>
+                </h3>
+                <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Midfielder</p>
+                <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                    <span>G: 5</span> <span>A: 1</span> <span class="text-slate-500">Utility</span>
+                </div>
+            </div>
+
+            <!-- KIRAN GADAM -->
+            <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-md hover:shadow-lg transition">
+                <div class="w-full h-44 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                    <img src="playerprofile/img/gaddamkiran.jpg" alt="KIRAN GADAM" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Kiran+Gadam&background=0D1B3E&color=fff';">
+                </div>
+                <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-blue-600 transition">
+                    <a href="profile-gaddamkiran.html">KIRAN GADAM</a>
+                </h3>
+                <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Midfielder</p>
+                <p class="text-[10px] text-amber-600 font-bold uppercase tracking-wider mt-2 italic"><i class="fas fa-star mr-1"></i> Multi-Role Prospect</p>
+            </div>
+
+            <!-- GURJANT SINGH BAL -->
+            <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-md hover:shadow-lg transition">
+                <div class="w-full h-44 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                    <img src="playerprofile/img/gurjant.jpg" alt="GURJANT SINGH BAL" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Gurjant+Singh&background=0D1B3E&color=fff';">
+                </div>
+                <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-blue-600 transition">
+                    <a href="profile-gurjantsinghbal.html">GURJANT SINGH BAL</a>
+                </h3>
+                <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Forward</p>
+                <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                    <span>G: 5</span> <span>A: 2</span> <span class="text-slate-500">Finisher</span>
+                </div>
+            </div>
+
+            <!-- Hemant P Chore -->
+            <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-md hover:shadow-lg transition">
+                <div class="w-full h-44 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                    <img src="playerprofile/img/hemantchore.jpg" alt="Hemant P Chore" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Hemant+Chore&background=0D1B3E&color=fff';">
+                </div>
+                <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-blue-600 transition">
+                    <a href="profile-hemantpchore.html">Hemant P Chore</a>
+                </h3>
+                <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Defender</p>
+                <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                    <span>G: 0</span> <span>A: 3</span> <span class="text-slate-500">Hardworking</span>
+                </div>
+            </div>
+
+            <!-- Hardik Joshi -->
+            <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-md hover:shadow-lg transition">
+                <div class="w-full h-44 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                    <img src="playerprofile/img/hardikjoshi.jpg" alt="Hardik Joshi" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Hardik+Joshi&background=0D1B3E&color=fff';">
+                </div>
+                <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-blue-600 transition">
+                    <a href="profile-hardikjoshi.html">Hardik Joshi</a>
+                </h3>
+                <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Midfielder / Utility</p>
+                <p class="text-[10px] text-amber-600 font-bold uppercase tracking-wider mt-2 italic"><i class="fas fa-bolt mr-1"></i> Super Division Vet</p>
+            </div>
+
+            <!-- Mutum Singh -->
+            <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-md hover:shadow-lg transition">
+                <div class="w-full h-44 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                    <img src="playerprofile/img/mutumsingh.jpg" alt="Mutum Singh" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Mutum+Singh&background=0D1B3E&color=fff';">
+                </div>
+                <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-blue-600 transition">
+                    <a href="profile-mutumsingh.html">Mutum Singh</a>
+                </h3>
+                <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Midfielder</p>
+                <div class="flex items-center gap-3 mt-2 text-[10px] font-bold text-gray-400">
+                    <span>G: 4</span> <span>A: 13</span> <span class="text-slate-500">Playmaker</span>
+                </div>
+            </div>
+
+            <!-- Akash Choudhary -->
+            <div class="bg-white rounded-3xl p-4 border border-gray-100 shadow-md hover:shadow-lg transition">
+                <div class="w-full h-44 bg-slate-100 rounded-2xl overflow-hidden mb-3">
+                    <img src="playerprofile/img/akashchoudhary.jpg" alt="Akash Choudhary" class="w-full h-full object-cover object-top" onerror="this.src='https://ui-avatars.com/api/?name=Akash+Choudhary&background=0D1B3E&color=fff';">
+                </div>
+                <h3 class="font-black uppercase text-gray-900 text-sm leading-tight hover:text-blue-600 transition">
+                    <a href="profile-akashchoudhary.html">Akash Choudhary</a>
+                </h3>
+                <p class="text-[#2D9F94] text-xs font-bold uppercase mt-0.5">Goal Keeper</p>
+                <p class="text-[10px] text-blue-600 font-bold uppercase tracking-wider mt-2 italic"><i class="fas fa-hands mr-1"></i> Net Securer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historical Hall of Fame Section -->
+    <section class="max-w-6xl mx-auto py-20 px-6">
+        <div class="mb-12 border-l-8 border-blue-900 pl-6">
+            <h2 class="text-3xl font-black uppercase italic text-gray-900">Alpha Hall of Fame</h2>
+            <p class="text-gray-500 font-medium">Legends of Season 1 & Season 3</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-[#0D1B3E] p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 text-white">
+                <span class="text-[9px] font-black text-yellow-500/50 uppercase tracking-widest">S1 Top Goal Scorer</span>
+                <h4 class="text-xl font-black uppercase italic mt-1">Fayaz Khan</h4>
+                <p class="text-xs font-bold text-yellow-500 mt-2">6 Season Goals</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-blue-600">
+                <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest">S1 Best Midfielder</span>
+                <h4 class="text-xl font-black uppercase italic mt-1">Kunal Chakrobarty</h4>
+                <p class="text-xs font-bold text-blue-600 mt-2">4 Critical Assists</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500">
+                <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest">S1 Best Player</span>
+                <h4 class="text-xl font-black uppercase italic mt-1">Rituraj</h4>
+                <p class="text-xs font-bold text-yellow-600 mt-2">The Ultimate Alpha</p>
             </div>
 			
-		 </section>
-		 
-<section class="max-w-6xl mx-auto py-20 px-6">
-    <div class="mb-12 border-l-8 border-blue-900 pl-6">
-        <h2 class="text-3xl font-black uppercase italic text-gray-900">Alpha Hall of Fame</h2>
-        <p class="text-gray-500 font-medium">Legends of Season 1 & Season 3</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-       
-
-        <div class="bg-[#0D1B3E] p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 text-white">
-            <span class="text-[9px] font-black text-yellow-500/50 uppercase tracking-widest">S1 Top Goal Scorer</span>
-            <h4 class="text-xl font-black uppercase italic mt-1">Fayaz Khan</h4>
-            <p class="text-xs font-bold text-yellow-500 mt-2">6 Season Goals</p>
+            <div class="bg-[#0D1B3E] p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 text-white">
+                <span class="text-[9px] font-black text-yellow-500/50 uppercase tracking-widest">S3 Best Goalkeeper</span>
+                <h4 class="text-xl font-black uppercase italic mt-1">Sahil Wasan</h4>
+                <p class="text-xs font-bold text-yellow-500 mt-2">58 KPL points</p>
+            </div>
         </div>
-
-        <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-blue-600">
-            <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest">S1 Best Midfielder</span>
-            <h4 class="text-xl font-black uppercase italic mt-1">Kunal Chakrobarty</h4>
-            <p class="text-xs font-bold text-blue-600 mt-2">4 Critical Assists</p>
-        </div>
-
-        <div class="bg-white p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500">
-            <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest">S1 Best Player</span>
-            <h4 class="text-xl font-black uppercase italic mt-1">Rituraj</h4>
-            <p class="text-xs font-bold text-yellow-600 mt-2">The Ultimate Alpha</p>
-        </div>
-		
-		<div class="bg-[#0D1B3E] p-6 rounded-3xl shadow-lg border-t-4 border-yellow-500 text-white">
-            <span class="text-[9px] font-black text-yellow-500/50 uppercase tracking-widest">S3 Best Goalkeeper</span>
-            <h4 class="text-xl font-black uppercase italic mt-1">Sahil Wasan</h4>
-            <p class="text-xs font-bold text-yellow-500 mt-2">58 KPL points</p>
-        </div>
-
-    </div>
-</section>
-
+    </section>
 
 </body>
 </html>
