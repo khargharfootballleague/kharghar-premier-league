@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPL Season 4 | Live Multi-Match Fantasy Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .input-matrix { width: 38px; text-align: center; background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 0.375rem; padding: 0.2rem; font-weight: 800; font-size: 11px; }
+        .input-matrix:focus { border-color: #2D9F94; outline: none; background-color: #fff; }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-gray-900 font-sans" onload="initDashboard()">
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="bg-white text-gray-900 py-3 px-6 sticky top-0 z-50 flex justify-between items-center shadow-md">
+        <div class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition">
+                <img src="img-team-logo/kpllogo.jpg" alt="KPL Logo" class="h-12 w-auto">
+                <div class="text-xl font-black tracking-tighter leading-none hidden sm:block uppercase">
+                    KHARGHAR <br><span class="text-[#2D9F94]">PREMIER LEAGUE</span>
+                </div>
+            </a>
+        </div>
+        <div class="flex space-x-6 font-semibold uppercase text-xs tracking-wider items-center">
+            <a href="index.html" class="hover:text-[#2D9F94] transition">Home</a>
+            <a href="clubs.html" class="hover:text-[#2D9F94] transition">Clubs</a>
+            <a href="records.html" class="hover:text-[#2D9F94] transition">Records</a>
+            <a href="season4.html" class="hover:text-[#2D9F94] transition">Season 4</a>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <header class="relative bg-[#0f172a] pt-12 pb-16 overflow-hidden border-b-8 border-[#2D9F94]">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-[#2D9F94] opacity-10 skew-x-12 -translate-x-20"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center md:text-left text-white">
+            <span class="bg-[#2D9F94] text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Season 4 Live Stats Engine</span>
+            <h1 class="text-4xl md:text-5xl font-black italic uppercase tracking-tighter leading-none mt-3 mb-2">
+                KPL Fantasy <span class="text-amber-500">Multi-Match Tracker</span>
+            </h1>
+            <p class="text-gray-400 font-medium text-xs md:text-sm max-w-4xl">
+                Track every game day metric seamlessly. The Aggregate Standings and Individual Award Boards update in real-time based on the match matrices below.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Dynamic Interface Layout -->
+    <main class="max-w-[90rem] mx-auto px-4 md:px-6 py-8">
+        
+        <!-- Tabbed Navigation Menu: Standings & Matches -->
+        <div class="flex flex-wrap gap-2 pb-3 mb-3">
+            <button onclick="switchTab('aggregate')" id="btn-tab-aggregate" class="tab-btn px-5 py-2 bg-slate-900 text-white text-[11px] font-black uppercase tracking-wider rounded-xl shadow transition flex items-center gap-2">
+                <i class="fas fa-chart-line"></i> Aggregate Standings
+            </button>
+            <button onclick="switchTab('m1')" id="btn-tab-m1" class="tab-btn px-4 py-2 bg-white text-gray-600 border border-gray-200 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-gray-50 transition">Match 1</button>
+            <button onclick="switchTab('m2')" id="btn-tab-m2" class="tab-btn px-4 py-2 bg-white text-gray-600 border border-gray-200 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-gray-50 transition">Match 2</button>
+            <button onclick="switchTab('m3')" id="btn-tab-m3" class="tab-btn px-4 py-2 bg-white text-gray-600 border border-gray-200 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-gray-50 transition">Match 3</button>
+            <button onclick="switchTab('m4')" id="btn-tab-m4" class="tab-btn px-4 py-2 bg-white text-gray-600 border border-gray-200 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-gray-50 transition">Match 4</button>
+            <button onclick="switchTab('m5')" id="btn-tab-m5" class="tab-btn px-4 py-2 bg-white text-gray-600 border border-gray-200 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-gray-50 transition">Match 5</button>
+            <button onclick="switchTab('m6')" id="btn-tab-m6" class="tab-btn px-4 py-2 bg-white text-gray-600 border border-gray-200 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-gray-50 transition">Match 6</button>
+            <button onclick="switchTab('m7')" id="btn-tab-m7" class="tab-btn px-4 py-2 bg-white text-gray-600 border border-gray-200 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-gray-50 transition">Match 7</button>
+            <button onclick="switchTab('sf')" id="btn-tab-sf" class="tab-btn px-4 py-2 bg-amber-50 border border-amber-200 text-amber-700 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-amber-100 transition"><i class="fas fa-trophy mr-1"></i> Semi Final</button>
+            <button onclick="switchTab('fin')" id="btn-tab-fin" class="tab-btn px-4 py-2 bg-amber-100 border border-amber-300 text-amber-800 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-amber-200 transition"><i class="fas fa-crown mr-1"></i> Final</button>
+        </div>
+
+        <!-- Tabbed Navigation Menu: Individual Awards -->
+        <div class="flex flex-wrap gap-2 border-b border-gray-200 pb-4 mb-6">
+            <span class="text-xs font-black text-gray-400 uppercase tracking-widest flex items-center mr-2">Award Boards:</span>
+            <button onclick="switchTab('award-player')" id="btn-tab-award-player" class="tab-btn px-4 py-1.5 bg-purple-50 text-purple-700 border border-purple-200 text-[10px] font-black uppercase tracking-wider rounded-lg hover:bg-purple-100 transition"><i class="fas fa-star mr-1"></i> Best Player</button>
+            <button onclick="switchTab('award-attacker')" id="btn-tab-award-attacker" class="tab-btn px-4 py-1.5 bg-purple-50 text-purple-700 border border-purple-200 text-[10px] font-black uppercase tracking-wider rounded-lg hover:bg-purple-100 transition"><i class="fas fa-futbol mr-1"></i> Best Attacker</button>
+            <button onclick="switchTab('award-midfielder')" id="btn-tab-award-midfielder" class="tab-btn px-4 py-1.5 bg-purple-50 text-purple-700 border border-purple-200 text-[10px] font-black uppercase tracking-wider rounded-lg hover:bg-purple-100 transition"><i class="fas fa-shoe-prints mr-1"></i> Best Midfielder</button>
+            <button onclick="switchTab('award-defender')" id="btn-tab-award-defender" class="tab-btn px-4 py-1.5 bg-purple-50 text-purple-700 border border-purple-200 text-[10px] font-black uppercase tracking-wider rounded-lg hover:bg-purple-100 transition"><i class="fas fa-shield-alt mr-1"></i> Best Defender</button>
+            <button onclick="switchTab('award-gk')" id="btn-tab-award-gk" class="tab-btn px-4 py-1.5 bg-purple-50 text-purple-700 border border-purple-200 text-[10px] font-black uppercase tracking-wider rounded-lg hover:bg-purple-100 transition"><i class="fas fa-hands mr-1"></i> Best Goalkeeper</button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <!-- SIDEBAR Column 1: Matrix Rules Reference -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="bg-white p-6 rounded-[2rem] shadow-md border border-gray-100 sticky top-24">
+                    <h3 class="text-sm font-black uppercase tracking-wider text-gray-400 mb-4 border-b pb-2"><i class="fas fa-calculator mr-1"></i> Scoring Engine Rulebook</h3>
+                    <div class="space-y-2 text-xs font-bold text-gray-700">
+                        <div class="flex justify-between p-2 bg-slate-50 rounded-lg"><span>Match Played (P)</span><span class="text-emerald-600">+1</span></div>
+                        <div class="flex justify-between p-2 bg-slate-50 rounded-lg"><span>Goal (Att/Mid)</span><span class="text-emerald-600">+4</span></div>
+                        <div class="flex justify-between p-2 bg-slate-50 rounded-lg"><span>Goal (Def)</span><span class="text-emerald-600">+6</span></div>
+                        <div class="flex justify-between p-2 bg-slate-50 rounded-lg"><span>Goal (GK)</span><span class="text-emerald-600">+10</span></div>
+                        <div class="flex justify-between p-2 bg-slate-50 rounded-lg"><span>Goal Assisted</span><span class="text-emerald-600">+3</span></div>
+                        <div class="flex justify-between p-2 bg-emerald-500/10 rounded-lg text-emerald-900"><span>Def/GK Conceded &lt;= 2</span><span>+3</span></div>
+                        <div class="flex justify-between p-2 bg-emerald-500/10 rounded-lg text-emerald-900"><span>Def/GK Clean Sheet</span><span>+6</span></div>
+                        <div class="flex justify-between p-2 bg-emerald-500/10 rounded-lg text-emerald-900"><span>GK Penalty Saved</span><span>+5</span></div>
+                        <div class="flex justify-between p-2 bg-blue-500/10 rounded-lg text-blue-900"><span>Bonus (Win / POM)</span><span>+1</span></div>
+                        <div class="flex justify-between p-2 bg-red-500/5 rounded-lg text-red-900"><span>Goals Conceded &gt;= 3</span><span class="text-red-600">-1</span></div>
+                        <div class="flex justify-between p-2 bg-red-500/5 rounded-lg text-red-900"><span>Penalty Miss / Own Goal</span><span class="text-red-600">-2</span></div>
+                        <div class="flex justify-between p-2 bg-red-500/5 rounded-lg text-red-900"><span>Yellow Card</span><span class="text-red-600">-1</span></div>
+                        <div class="flex justify-between p-2 bg-red-500/5 rounded-lg text-red-900"><span>Red Card</span><span class="text-red-600">-3</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN DATA COLUMN 2: Tables & Active Content -->
+            <div class="lg:col-span-3">
+                
+                <!-- ========================================== -->
+                <!--          TAB CONTENT: AGGREGATE            -->
+                <!-- ========================================== -->
+                <div id="tab-aggregate" class="tab-content space-y-6">
+                    <div class="bg-white p-6 rounded-[2.5rem] shadow-md border border-gray-100">
+                        <div class="flex justify-between items-center mb-4 border-b pb-4">
+                            <div>
+                                <h2 class="text-lg font-black uppercase italic tracking-tight">KPL S4 Combined Leaderboard</h2>
+                                <p class="text-gray-400 font-medium text-xs">Accumulated performance matrix totals across all 7 league matches + Knockouts.</p>
+                            </div>
+                        </div>
+                        <div class="overflow-x-auto rounded-2xl border border-gray-100">
+                            <table class="w-full min-w-[700px] border-collapse text-left text-xs font-bold text-gray-700">
+                                <thead class="bg-slate-50 text-[10px] font-black tracking-wider text-gray-400 uppercase">
+                                    <tr>
+                                        <th class="p-3 pl-4">Rank</th>
+                                        <th class="p-3">Player Identity</th>
+                                        <th class="p-3">Team</th>
+                                        <th class="p-3">Role</th>
+                                        <th class="p-3 text-center border-l border-gray-100">Total Goals</th>
+                                        <th class="p-3 text-center">Total Assists</th>
+                                        <th class="p-3 pr-4 text-right border-l border-gray-100">Combined FPL Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="aggregateTableBody" class="divide-y divide-gray-50">
+                                    <!-- Injected live via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!--       TAB CONTENT: INDIVIDUAL AWARDS       -->
+                <!-- ========================================== -->
+                <div id="tab-award-container" class="tab-content hidden space-y-6">
+                    <div class="bg-gradient-to-br from-purple-900 to-slate-900 text-white p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden">
+                        <i class="fas fa-trophy absolute -right-10 -bottom-10 text-9xl text-white/5"></i>
+                        <div class="relative z-10">
+                            <span class="bg-purple-500/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Official KPL Honors</span>
+                            <h2 id="awardActiveTitle" class="text-3xl font-black uppercase italic tracking-tighter mt-4">Award Title</h2>
+                            <p id="awardActiveDesc" class="text-gray-300 font-medium text-sm mt-1 mb-6">Award description goes here.</p>
+                            
+                            <div class="overflow-x-auto rounded-2xl border border-white/10 bg-black/20 backdrop-blur-md">
+                                <table class="w-full min-w-[600px] border-collapse text-left text-xs font-bold text-gray-200">
+                                    <thead class="bg-white/5 text-[10px] font-black tracking-wider text-purple-300 uppercase">
+                                        <tr>
+                                            <th class="p-3 pl-4">Rank</th>
+                                            <th class="p-3">Player Identity</th>
+                                            <th class="p-3">Team</th>
+                                            <th class="p-3">Role</th>
+                                            <th id="awardMetricHeader" class="p-3 pr-4 text-right">Target Metric</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="awardTableBody" class="divide-y divide-white/5">
+                                        <!-- Injected dynamically via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!--     TAB CONTENT: GENERIC MATCH SLOTS       -->
+                <!-- ========================================== -->
+                <div id="tab-match-container" class="tab-content hidden space-y-6">
+                    <div class="bg-white p-6 rounded-[2.5rem] shadow-md border border-gray-100">
+                        <div class="flex justify-between items-center mb-4 border-b pb-4">
+                            <div>
+                                <h2 id="matchActiveTitle" class="text-lg font-black uppercase italic tracking-tight">Match Performance Grid</h2>
+                                <p class="text-gray-400 font-medium text-xs">Full field matrix including Clean Sheets, PK variables, and positional goal scoring logic.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="overflow-x-auto rounded-2xl border border-gray-100">
+                            <table class="w-full min-w-[1100px] border-collapse text-left text-[11px] font-bold text-gray-700">
+                                <thead class="bg-slate-50 text-[9px] font-black tracking-wider text-gray-400 uppercase">
+                                    <tr>
+                                        <th class="p-2 pl-4">Player</th>
+                                        <th class="p-2 text-center">P</th>
+                                        <th class="p-2 text-center text-emerald-600 bg-emerald-50">G(A/M)</th>
+                                        <th class="p-2 text-center text-emerald-600 bg-emerald-50">G(Def)</th>
+                                        <th class="p-2 text-center text-emerald-600 bg-emerald-50">G(GK)</th>
+                                        <th class="p-2 text-center">Ast</th>
+                                        <th class="p-2 text-center">CS</th>
+                                        <th class="p-2 text-center">Con&lt;=2</th>
+                                        <th class="p-2 text-center text-red-500">Con&gt;=3</th>
+                                        <th class="p-2 text-center">PenSv</th>
+                                        <th class="p-2 text-center text-red-500">PM/OG</th>
+                                        <th class="p-2 text-center text-red-500">Y/R</th>
+                                        <th class="p-2 text-center">Bonus</th>
+                                        <th class="p-2 pr-4 text-right">Pts</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="matchTableBody" class="divide-y divide-gray-50">
+                                    <!-- Injected dynamically via database lookup -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Data Registry & Dynamic Calculation Core Script -->
+    <script>
+        const kplPlayers = [
+            { name: "Ratish", team: "Wolves", pos: "mid", link: "profile-ratishnair.html" },
+            { name: "Rituraj", team: "Wolves", pos: "mid", link: "profile-riturajfartyal.html" },
+            { name: "Sanu", team: "Wolves", pos: "def", link: "profile-sinudaniel.html" },
+            { name: "Akhil", team: "Wolves", pos: "mid", link: "profile-akhilnair.html" },
+            { name: "ANKIT MISHRA", team: "Wolves", pos: "mid", link: "profile-ankitmishra.html" },
+            { name: "KIRAN GADAM", team: "Wolves", pos: "mid", link: "profile-gaddamkiran.html" },
+            { name: "GURJANT", team: "Wolves", pos: "mid", link: "profile-gurjantsinghbal.html" },
+            { name: "Hemant Chore", team: "Wolves", pos: "def", link: "profile-hemantpchore.html" },
+            { name: "Hardik Joshi", team: "Wolves", pos: "mid", link: "profile-hardikjoshi.html" },
+            { name: "Mutum", team: "Wolves", pos: "def", link: "profile-mutumsingh.html" },
+            { name: "Akash Choudhary", team: "Wolves", pos: "gk", link: "profile-akashchoudhary.html" },
+            { name: "DJ Paddy", team: "Atletico", pos: "mid", link: "profile-djpaddymumbai.html" },
+            { name: "Ayan", team: "Atletico", pos: "mid", link: "profile-ayansaha.html" },
+            { name: "Siddharth", team: "Atletico", pos: "mid", link: "profile-siddharththakur.html" },
+            { name: "Sai M", team: "Atletico", pos: "gk", link: "profile-saimadireddi.html" },
+            { name: "Akshay Shetty", team: "Atletico", pos: "mid", link: "profile-akshayshetty.html" },
+            { name: "Vijay S", team: "Atletico", pos: "def", link: "profile-vijayshanbag.html" },
+            { name: "Narendra Sharma", team: "Atletico", pos: "def", link: "profile-narendrasharma.html" },
+            { name: "Akash Kanturia", team: "Atletico", pos: "mid", link: "profile-akashkanturia.html" },
+            { name: "Mayank C", team: "Atletico", pos: "gk", link: "profile-mayankchauhan.html" },
+            { name: "Rahul S", team: "Atletico", pos: "mid", link: "profile-rahulsehrawat.html" },
+            { name: "Satbir Mann", team: "Atletico", pos: "mid", link: "profile-satbirsinghmann.html" },
+            { name: "Nitin", team: "Mavericks", pos: "mid", link: "profile-nitintewari.html" },
+            { name: "ABHAY SHINDE", team: "Mavericks", pos: "mid", link: "profile-abhayshinde.html" },
+            { name: "HEMANT GHADGE", team: "Mavericks", pos: "def", link: "profile-hemantghadge.html" },
+            { name: "Ronik Shah", team: "Mavericks", pos: "gk", link: "profile-ronikshah.html" },
+            { name: "Vishal F", team: "Mavericks", pos: "def", link: "profile-vishalfarro.html" },
+            { name: "jibin joy", team: "Mavericks", pos: "def", link: "profile-jibinjoy.html" },
+            { name: "ANTHONY PAUL", team: "Mavericks", pos: "def", link: "profile-jeroldanthony.html" },
+            { name: "Dhaval", team: "Mavericks", pos: "gk", link: "profile-dhavalmehta.html" },
+            { name: "Shazad", team: "Mavericks", pos: "mid", link: "profile-shazadkhan.html" },
+            { name: "Debanand M", team: "Mavericks", pos: "def", link: "profile-debanandmajhi.html" },
+            { name: "Umesh Dharade", team: "Mavericks", pos: "mid", link: "profile-umeshdharade.html" },
+            { name: "Rahul Raina", team: "Real", pos: "def", link: "profile-rahulraina.html" },
+            { name: "Dexter", team: "Real", pos: "mid", link: "profile-dexterpeters.html" },
+            { name: "Gaurav", team: "Real", pos: "mid", link: "profile-gauravshetty.html" },
+            { name: "Aditya G", team: "Real", pos: "mid", link: "profile-adityagolatkar.html" },
+            { name: "Abhishek KD", team: "Real", pos: "mid", link: "profile-abhishekkd.html" },
+            { name: "Dhananjay", team: "Real", pos: "mid", link: "profile-dhananjaydar.html" },
+            { name: "Madan T", team: "Real", pos: "mid", link: "profile-madantakalikar.html" },
+            { name: "Sahil", team: "Real", pos: "gk", link: "profile-sahilwasan.html" },
+            { name: "Zahoor", team: "Real", pos: "mid", link: "profile-zahoorbaba.html" },
+            { name: "Bikram", team: "Real", pos: "def", link: "profile-bikramhandoo.html" },
+            { name: "Dinesh S", team: "Real", pos: "mid", link: "profile-dineshshetty.html" },
+            { name: "Prashant", team: "United", pos: "def", link: "profile-prashantdumbre.html" },
+            { name: "Rohan", team: "United", pos: "mid", link: "profile-rohanshetty.html" },
+            { name: "ADIL", team: "United", pos: "mid", link: "profile-adilpetkar.html" },
+            { name: "Kishan", team: "United", pos: "mid", link: "profile-kishankomalan.html" },
+            { name: "Adarsh", team: "United", pos: "mid", link: "profile-adarshcv.html" },
+            { name: "padam", team: "United", pos: "def", link: "profile-padamgera.html" },
+            { name: "Sinu", team: "United", pos: "mid", link: "profile-sinudaniel.html" },
+            { name: "Suman", team: "United", pos: "gk", link: "profile-sumankumar.html" },
+            { name: "Hiralal", team: "United", pos: "mid", link: "profile-hiralalchettri.html" },
+            { name: "Pratik", team: "United", pos: "def", link: "profile-pratikbahuguna.html" },
+            { name: "Ishtiyaque", team: "United", pos: "mid", link: "profile-shaikhishtiyaque.html" },
+            { name: "Kunal", team: "Falcons", pos: "mid", link: "profile-kunalchakraborty.html" },
+            { name: "Stephen", team: "Falcons", pos: "mid", link: "profile-stephendsouza.html" },
+            { name: "Abhinav", team: "Falcons", pos: "def", link: "profile-abhinavjha.html" },
+            { name: "Neal Thakur", team: "Falcons", pos: "mid", link: "profile-nealthakur.html" },
+            { name: "Abhijit Shinde", team: "Falcons", pos: "mid", link: "profile-abhijeetshinde.html" },
+            { name: "Amey A", team: "Falcons", pos: "gk", link: "profile-ameyacharya.html" },
+            { name: "Darshan", team: "Falcons", pos: "def", link: "profile-darshanghadge.html" },
+            { name: "FAYAZ", team: "Falcons", pos: "mid", link: "profile-fayazkhan.html" },
+            { name: "Sanket g", team: "Falcons", pos: "mid", link: "profile-sanketgavhane.html" },
+            { name: "Amar B", team: "Falcons", pos: "mid", link: "profile-amarbhise.html" },
+            { name: "JIgarr D", team: "Falcons", pos: "mid", link: "profile-jigarrderashri.html" }
+        ];
+
+        const allMatches = ['m1', 'm2', 'm3', 'm4', 'm5', 'm6', 'm7', 'sf', 'fin'];
+        let fantasyData = {};
+        allMatches.forEach(m => fantasyData[m] = {});
+
+        const titleMap = {
+            m1: 'Match 1', m2: 'Match 2', m3: 'Match 3', m4: 'Match 4', m5: 'Match 5', 
+            m6: 'Match 6', m7: 'Match 7', sf: 'Semi Final', fin: 'Final'
+        };
+
+        function initDashboard() {
+            allMatches.forEach(mId => {
+                kplPlayers.forEach(p => {
+                    fantasyData[mId][p.name] = { 
+                        p: 0, g: 0, gd: 0, ggk: 0, a: 0, csh: 0, 
+                        cLE2: 0, cGE3: 0, psv: 0, pmo: 0, y: 0, r: 0, b: 0, calculated: 0 
+                    };
+                });
+            });
+            updateAggregateTable();
+        }
+
+        function getAggregatedData() {
+            return kplPlayers.map(p => {
+                let tPts = 0, tG = 0, tA = 0;
+                allMatches.forEach(match => {
+                    tPts += fantasyData[match][p.name].calculated;
+                    tG += (fantasyData[match][p.name].g + fantasyData[match][p.name].gd + fantasyData[match][p.name].ggk);
+                    tA += fantasyData[match][p.name].a;
+                });
+                return { ...p, totalPoints: tPts, totalGoals: tG, totalAssists: tA };
+            });
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                if (b.id.includes('award')) {
+                    b.className = "tab-btn px-4 py-1.5 bg-purple-50 text-purple-700 border border-purple-200 text-[10px] font-black uppercase tracking-wider rounded-lg hover:bg-purple-100 transition";
+                } else if (b.id.includes('sf') || b.id.includes('fin')) {
+                    b.className = "tab-btn px-4 py-2 bg-amber-50 border border-amber-200 text-amber-700 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-amber-100 transition";
+                } else {
+                    b.className = "tab-btn px-4 py-2 bg-white text-gray-600 border border-gray-200 text-[11px] font-black uppercase tracking-wider rounded-xl hover:bg-gray-50 transition";
+                }
+            });
+
+            const activeBtn = document.getElementById(`btn-tab-${tabId}`);
+            if (tabId === 'aggregate') {
+                activeBtn.className = "tab-btn px-5 py-2 bg-slate-900 text-white text-[11px] font-black uppercase tracking-wider rounded-xl shadow transition flex items-center gap-2";
+            } else if (tabId.includes('award')) {
+                activeBtn.className = "tab-btn px-4 py-1.5 bg-purple-600 text-white text-[10px] font-black uppercase tracking-wider rounded-lg shadow transition";
+            } else if (tabId === 'sf' || tabId === 'fin') {
+                activeBtn.className = "tab-btn px-4 py-2 bg-amber-500 text-white text-[11px] font-black uppercase tracking-wider rounded-xl shadow transition";
+            } else {
+                activeBtn.className = "tab-btn px-4 py-2 bg-slate-800 text-white text-[11px] font-black uppercase tracking-wider rounded-xl shadow transition";
+            }
+
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+
+            if (tabId === 'aggregate') {
+                document.getElementById('tab-aggregate').classList.remove('hidden');
+                updateAggregateTable();
+            } else if (tabId.startsWith('award-')) {
+                document.getElementById('tab-award-container').classList.remove('hidden');
+                renderAwardBoard(tabId);
+            } else {
+                document.getElementById('tab-match-container').classList.remove('hidden');
+                document.getElementById('matchActiveTitle').innerText = `${titleMap[tabId]} Performance Grid`;
+                renderMatchTable(tabId);
+            }
+        }
+
+        function renderAwardBoard(awardId) {
+            let data = getAggregatedData();
+            let title = "", desc = "", headerTarget = "";
+
+            if (awardId === 'award-player') {
+                data.sort((a, b) => b.totalPoints - a.totalPoints);
+                title = "Best Player (MVP)";
+                desc = "Highest total FPL points accumulated from any position category.";
+                headerTarget = "Total FPL Points";
+            } else if (awardId === 'award-attacker') {
+                data.sort((a, b) => b.totalGoals - a.totalGoals);
+                title = "Best Attacker (Golden Boot)";
+                desc = "Ranked strictly by the absolute maximum number of goals scored.";
+                headerTarget = "Total Goals";
+            } else if (awardId === 'award-midfielder') {
+                data.sort((a, b) => b.totalAssists - a.totalAssists);
+                title = "Best Midfielder (Playmaker)";
+                desc = "Ranked strictly by the absolute maximum number of assists provided.";
+                headerTarget = "Total Assists";
+            } else if (awardId === 'award-defender') {
+                data = data.filter(p => p.pos === 'def').sort((a, b) => b.totalPoints - a.totalPoints);
+                title = "Best Defender (The Wall)";
+                desc = "Highest total FPL points achieved by a player registered specifically as a Defender.";
+                headerTarget = "Total FPL Points";
+            } else if (awardId === 'award-gk') {
+                data = data.filter(p => p.pos === 'gk').sort((a, b) => b.totalPoints - a.totalPoints);
+                title = "Best Goalkeeper (Golden Gloves)";
+                desc = "Highest total FPL points achieved by a player registered specifically as a Goalkeeper.";
+                headerTarget = "Total FPL Points";
+            }
+
+            document.getElementById('awardActiveTitle').innerText = title;
+            document.getElementById('awardActiveDesc').innerText = desc;
+            document.getElementById('awardMetricHeader').innerText = headerTarget;
+
+            const tbody = document.getElementById('awardTableBody');
+            tbody.innerHTML = '';
+
+            data.slice(0, 10).forEach((p, idx) => {
+                let targetMetricVal = headerTarget === "Total Goals" ? p.totalGoals : 
+                                      headerTarget === "Total Assists" ? p.totalAssists : p.totalPoints;
+                
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-white/10 transition";
+                let medalBadge = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : `${idx + 1}`;
+
+                tr.innerHTML = `
+                    <td class="p-3 pl-4 font-black text-purple-400/50">${medalBadge}</td>
+                    <td class="p-3"><a href="${p.link}" class="text-white uppercase font-black hover:underline">${p.name}</a></td>
+                    <td class="p-3 uppercase text-purple-200 text-[10px] font-black">${p.team}</td>
+                    <td class="p-3"><span class="bg-white/10 px-2 py-0.5 rounded text-[9px] uppercase">${p.pos}</span></td>
+                    <td class="p-3 pr-4 text-right text-base font-black text-amber-400">${targetMetricVal}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function renderMatchTable(mId) {
+            const tbody = document.getElementById('matchTableBody');
+            tbody.innerHTML = '';
+
+            kplPlayers.forEach(p => {
+                const pData = fantasyData[mId][p.name];
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50/60 transition";
+                
+                let teamBadges = {
+                    Wolves: 'bg-blue-100 text-blue-800', Atletico: 'bg-red-100 text-red-800', 
+                    Mavericks: 'bg-indigo-100 text-indigo-800', Real: 'bg-emerald-100 text-emerald-800',
+                    United: 'bg-amber-100 text-amber-900', Falcons: 'bg-orange-100 text-orange-800'
+                };
+
+                tr.innerHTML = `
+                    <td class="p-2 pl-4"><a href="${p.link}" class="text-slate-900 uppercase font-black hover:text-[#2D9F94] transition">${p.name}</a></td>
+                    <td class="p-2 text-center"><input type="number" class="input-matrix" value="${pData.p}" onchange="updateMetric('${mId}', '${p.name}', 'p', this.value)"></td>
+                    <td class="p-2 text-center bg-emerald-50/30"><input type="number" class="input-matrix" value="${pData.g}" onchange="updateMetric('${mId}', '${p.name}', 'g', this.value)"></td>
+                    <td class="p-2 text-center bg-emerald-50/30"><input type="number" class="input-matrix" value="${pData.gd}" onchange="updateMetric('${mId}', '${p.name}', 'gd', this.value)"></td>
+                    <td class="p-2 text-center bg-emerald-50/30"><input type="number" class="input-matrix" value="${pData.ggk}" onchange="updateMetric('${mId}', '${p.name}', 'ggk', this.value)"></td>
+                    <td class="p-2 text-center"><input type="number" class="input-matrix" value="${pData.a}" onchange="updateMetric('${mId}', '${p.name}', 'a', this.value)"></td>
+                    <td class="p-2 text-center"><input type="number" class="input-matrix" value="${pData.csh}" onchange="updateMetric('${mId}', '${p.name}', 'csh', this.value)"></td>
+                    <td class="p-2 text-center"><input type="number" class="input-matrix" value="${pData.cLE2}" onchange="updateMetric('${mId}', '${p.name}', 'cLE2', this.value)"></td>
+                    <td class="p-2 text-center bg-red-50/30"><input type="number" class="input-matrix" value="${pData.cGE3}" onchange="updateMetric('${mId}', '${p.name}', 'cGE3', this.value)"></td>
+                    <td class="p-2 text-center"><input type="number" class="input-matrix" value="${pData.psv}" onchange="updateMetric('${mId}', '${p.name}', 'psv', this.value)"></td>
+                    <td class="p-2 text-center bg-red-50/30"><input type="number" class="input-matrix" value="${pData.pmo}" onchange="updateMetric('${mId}', '${p.name}', 'pmo', this.value)"></td>
+                    <td class="p-2 text-center flex justify-center gap-1">
+                        <input type="number" class="w-7 text-center bg-slate-50 border border-slate-200 rounded py-1 font-black text-[9px]" value="${pData.y}" placeholder="Y" onchange="updateMetric('${mId}', '${p.name}', 'y', this.value)">
+                        <input type="number" class="w-7 text-center bg-slate-50 border border-slate-200 rounded py-1 font-black text-[9px]" value="${pData.r}" placeholder="R" onchange="updateMetric('${mId}', '${p.name}', 'r', this.value)">
+                    </td>
+                    <td class="p-2 text-center"><input type="number" class="input-matrix" value="${pData.b}" onchange="updateMetric('${mId}', '${p.name}', 'b', this.value)"></td>
+                    <td id="pts-${mId}-${p.name}" class="p-2 pr-4 text-right font-black text-sm text-gray-400">${pData.calculated}</td>
+                `;
+                tbody.appendChild(tr);
+                evaluatePoints(mId, p.name);
+            });
+        }
+
+        function updateMetric(mId, name, field, value) {
+            fantasyData[mId][name][field] = parseInt(value) || 0;
+            evaluatePoints(mId, name);
+        }
+
+        function evaluatePoints(mId, name) {
+            const data = fantasyData[mId][name];
+            let pts = 0;
+
+            if (data.p > 0) {
+                pts += (data.p * 1); 
+                pts += (data.g * 4);       
+                pts += (data.gd * 6);      
+                pts += (data.ggk * 10);    
+                pts += (data.a * 3);       
+                pts += (data.csh * 6);     
+                pts += (data.cLE2 * 3);    
+                pts += (data.cGE3 * -1);   
+                pts += (data.psv * 5);     
+                pts += (data.pmo * -2);    
+                pts += (data.y * -1);      
+                pts += (data.r * -3);      
+                pts += (data.b * 1);       
+            }
+
+            data.calculated = pts;
+            const container = document.getElementById(`pts-${mId}-${name}`);
+            if (container) {
+                container.innerText = pts;
+                container.className = pts < 0 ? "p-2 pr-4 text-right font-black text-sm text-red-500" : "p-2 pr-4 text-right font-black text-sm text-[#2D9F94]";
+            }
+        }
+
+        function updateAggregateTable() {
+            const tbody = document.getElementById('aggregateTableBody');
+            tbody.innerHTML = '';
+
+            let aggregateMap = getAggregatedData();
+            aggregateMap.sort((a, b) => b.totalPoints - a.totalPoints);
+
+            aggregateMap.forEach((p, idx) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50/50 transition font-bold";
+                let medalBadge = idx === 0 ? "🥇" : idx === 1 ? "🥈" : idx === 2 ? "🥉" : `${idx + 1}`;
+
+                tr.innerHTML = `
+                    <td class="p-3 pl-4 font-black text-slate-400">${medalBadge}</td>
+                    <td class="p-3"><a href="${p.link}" class="text-blue-600 uppercase font-black hover:underline">${p.name}</a></td>
+                    <td class="p-3 uppercase text-gray-500 text-[10px]">${p.team}</td>
+                    <td class="p-3"><span class="bg-slate-100 px-2 py-0.5 rounded text-[9px] uppercase">${p.pos}</span></td>
+                    <td class="p-3 text-center border-l border-gray-100 text-gray-900 font-black">${p.totalGoals}</td>
+                    <td class="p-3 text-center text-gray-900 font-black">${p.totalAssists}</td>
+                    <td class="p-3 pr-4 text-right text-sm font-black border-l border-gray-100 ${p.totalPoints < 0 ? 'text-red-500' : 'text-[#2D9F94]'}">${p.totalPoints} Pts</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+</html>

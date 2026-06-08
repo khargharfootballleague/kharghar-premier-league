@@ -73,6 +73,7 @@
     </header>
 
     <section class="max-w-4xl mx-auto -mt-12 px-6 relative z-20">
+
         <div class="bg-white rounded-3xl shadow-2xl p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center border border-gray-100">
             <div>
                 <p class="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Stage 1</p>
@@ -82,48 +83,213 @@
             </div>
             <div class="border-y md:border-y-0 md:border-x border-gray-100 py-4 md:py-0">
                 <p class="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Stage 2</p>
-                <h3 class="font-bold text-orange-500 animate-pulse">Player Auction</h3>
-				<h4 class="font-bold text-gray-500 animate-pulse">30th May 2026</h3>
+                <h3 class="font-bold text-[#2D9F94] flex items-center justify-center gap-2">
+                  <a href="auction-s4.html" class="font-bold text-green-300 ">View Players Auction </a> 
+                </h3>
             </div>
             <div>
                 <p class="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Stage 3</p>
-                <h3 class="font-bold text-green-300">Kick Off</h3>
-				<h3 class="font-bold text-gray-300">2nd Aug 2026</h3>
+                <h3 class="font-bold text-orange-300 animate-pulse">Kick Off</h3>
+				<h3 class="font-bold text-gray-300 animate-pulse">2nd Aug 2026</h3>
             </div>
         </div>
     </section>
+	
+
 
     <main class="max-w-6xl mx-auto py-16 px-6">
     
     <div class="text-center mb-16">
         <h2 class="text-5xl md:text-6xl font-black uppercase italic leading-none">
-            The <span class="text-[#2D9F94]">Grand Auction</span>
+            The <span class="text-[#2D9F94]">Grand Season</span>
         </h2>
-		<a href="auction-s4.html" class="inline-block bg-red-600 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-sm md:text-base font-black uppercase hover:scale-105 transition-all shadow-lg">
-            
-			Season 4 Auction
-			
-        </a>
-        <p class="text-gray-500 font-bold mt-4 uppercase tracking-[0.3em]">Season 04 • 30 May 2026</p>
+        <p class="text-gray-500 font-bold mt-4 uppercase tracking-[0.3em]">Starts • 02 Aug 2026</p>
     </div>
+	
+	<!-- ========================================== -->
+<!--        SEASON 4 POINTS TABLE SECTION       -->
+<!-- ========================================== -->
+<section class="max-w-6xl mx-auto py-16 px-6">
+    <div class="flex flex-col md:flex-row md:items-center justify-between border-b pb-4 border-gray-200 mb-8 gap-4">
+        <div>
+            <h2 class="text-3xl font-black uppercase italic tracking-tight text-gray-900">
+                <i class="fas fa-list-ol text-[#2D9F94] mr-2"></i> Season 4 Standings
+            </h2>
+            <p class="text-gray-500 font-medium text-sm mt-1">Live points table. The top 4 franchises advance to the Knockout Semifinals.</p>
+        </div>
+        <span class="bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-full border border-emerald-200 animate-pulse self-start md:self-auto shrink-0">
+            <i class="fas fa-circle text-[8px] mr-1"></i> Live Tracking
+        </span>
+    </div>
+
+    <div class="bg-white rounded-[2.5rem] shadow-lg border border-gray-100 overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse whitespace-nowrap">
+                <thead>
+                    <tr class="bg-slate-900 text-white text-[11px] font-black tracking-wider uppercase">
+                        <th class="p-4 pl-6 text-center w-12">Pos</th>
+                        <th class="p-4">Franchise</th>
+                        <th class="p-4 text-center w-12" title="Played">P</th>
+                        <th class="p-4 text-center w-12" title="Won">W</th>
+                        <th class="p-4 text-center w-12" title="Drawn">D</th>
+                        <th class="p-4 text-center w-12" title="Lost">L</th>
+                        <th class="p-4 text-center w-12 hidden sm:table-cell" title="Goals For">GF</th>
+                        <th class="p-4 text-center w-12 hidden sm:table-cell" title="Goals Against">GA</th>
+                        <th class="p-4 text-center w-12" title="Goal Difference">GD</th>
+                        <th class="p-4 pr-6 text-center w-16 text-amber-400">Pts</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 text-sm font-bold text-gray-700">
+                    
+                    <!-- 1st Place (Playoff Zone) -->
+                    <tr class="hover:bg-slate-50 transition bg-emerald-50/40">
+                        <td class="p-4 pl-6 text-center">
+                            <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs mx-auto shadow-sm">1</span>
+                        </td>
+                        <td class="p-4 flex items-center gap-3">
+                            <img src="img-team-logo/Wolves.png" class="w-8 h-8 object-contain" alt="Alpha Wolves" onerror="this.src='https://ui-avatars.com/api/?name=AW&background=0f172a&color=fff';">
+                            Alpha Wolves United FC
+                        </td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
+                    </tr>
+
+                    <!-- 2nd Place (Playoff Zone) -->
+                    <tr class="hover:bg-slate-50 transition bg-emerald-50/40">
+                        <td class="p-4 pl-6 text-center">
+                            <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs mx-auto shadow-sm">2</span>
+                        </td>
+                        <td class="p-4 flex items-center gap-3">
+                            <img src="img-team-logo/atletico.png" class="w-8 h-8 object-contain" alt="Atletico" onerror="this.src='https://ui-avatars.com/api/?name=AT&background=0f172a&color=fff';">
+                            Atletico de Kharghar FC
+                        </td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
+                    </tr>
+
+                    <!-- 3rd Place (Playoff Zone) -->
+                    <tr class="hover:bg-slate-50 transition bg-emerald-50/40">
+                        <td class="p-4 pl-6 text-center">
+                            <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs mx-auto shadow-sm">3</span>
+                        </td>
+                        <td class="p-4 flex items-center gap-3">
+                            <img src="img-team-logo/falcons.png" class="w-8 h-8 object-contain" alt="Falcons" onerror="this.src='https://ui-avatars.com/api/?name=FK&background=0f172a&color=fff';">
+                            Falcons Kharghar FC
+                        </td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
+                    </tr>
+
+                    <!-- 4th Place (Playoff Zone) -->
+                    <tr class="hover:bg-slate-50 transition bg-emerald-50/40">
+                        <td class="p-4 pl-6 text-center">
+                            <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs mx-auto shadow-sm">4</span>
+                        </td>
+                        <td class="p-4 flex items-center gap-3">
+                            <img src="img-team-logo/KUFC.jpg" class="w-8 h-8 object-contain" alt="Kharghar United" onerror="this.src='https://ui-avatars.com/api/?name=KU&background=0f172a&color=fff';">
+                            Kharghar United FC
+                        </td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
+                    </tr>
+
+                    <!-- 5th Place (Elimination Zone) -->
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-4 pl-6 text-center">
+                            <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs mx-auto">5</span>
+                        </td>
+                        <td class="p-4 flex items-center gap-3">
+                            <img src="img-team-logo/mavericks.png" class="w-8 h-8 object-contain" alt="Mavericks" onerror="this.src='https://ui-avatars.com/api/?name=MK&background=0f172a&color=fff';">
+                            Mavericks Knights FC
+                        </td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-gray-400">0</td>
+                    </tr>
+
+                    <!-- 6th Place (Elimination Zone) -->
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="p-4 pl-6 text-center">
+                            <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs mx-auto">6</span>
+                        </td>
+                        <td class="p-4 flex items-center gap-3">
+                            <img src="img-team-logo/kpllogo.jpg" class="w-8 h-8 object-contain" alt="Real Kharghar" onerror="this.src='https://ui-avatars.com/api/?name=RK&background=0f172a&color=fff';">
+                            Real Kharghar FC
+                        </td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-400 hidden sm:table-cell">0</td>
+                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-gray-400">0</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Table Footer Legend -->
+        <div class="bg-slate-50 p-4 border-t border-gray-100 text-[10px] text-gray-500 font-bold uppercase tracking-wider flex justify-center gap-8">
+            <span class="flex items-center gap-2"><div class="w-3 h-3 bg-emerald-500 rounded-sm"></div> Playoff Qualification</span>
+            <span class="flex items-center gap-2"><div class="w-3 h-3 bg-gray-300 rounded-sm"></div> Eliminated</span>
+			<a href="s4-schedule.html" class="flex items-center gap-2 bg-[#0f172a] text-white px-4 py-2 rounded-lg hover:bg-[#2D9F94] transition shadow-sm">
+                <i class="fas fa-chart-pie"></i> Season 4 Schedule
+            </a>
+			<a href="stats-fpl.html" class="flex items-center gap-2 bg-[#0f172a] text-white px-4 py-2 rounded-lg hover:bg-[#2D9F94] transition shadow-sm">
+                <i class="fas fa-chart-pie"></i> Season 4 Player Stats
+            </a>
+        </div>
+    </div>
+</section>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         
         <div class="space-y-8">
             <p class="text-xl text-gray-700 leading-relaxed font-medium">
-                The battle for the best talent in Kharghar is about to begin. Club owners from the 
-                <span class="font-black">Elite Six</span>
-                <span class="text-xl text-gray-700 leading-relaxed font-medium">will go head-to-head in a high-stakes bidding war.</span>
+                The battle for new Champion in Kharghar Premier League is about to begin. 
+                <span class="font-black">Elite Six Clubs</span>
+                <span class="text-xl text-gray-700 leading-relaxed font-medium">will go head-to-head in a high-stakes matches.</span>
             </p>
             
             <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                <h4 class="text-sm font-black uppercase tracking-widest text-gray-400 mb-6">Auction Highlights</h4>
+                <h4 class="text-sm font-black uppercase tracking-widest text-gray-400 mb-6">Season 4 Highlights</h4>
                 <ul class="space-y-6">
                     <li class="flex items-center gap-4">
                         <div class="h-10 w-10 bg-teal-50 rounded-full flex items-center justify-center text-[#2D9F94]">
                             <i class="fas fa-users"></i>
                         </div>
-                        <span class="font-bold text-gray-800">70+ Players Registered</span>
+                        <span class="font-bold text-gray-800">66 Players</span>
                     </li>
                     <li class="flex items-center gap-4">
                         <div class="h-10 w-10 bg-teal-50 rounded-full flex items-center justify-center text-[#2D9F94]">
@@ -135,7 +301,7 @@
                         <div class="h-10 w-10 bg-teal-50 rounded-full flex items-center justify-center text-[#2D9F94]">
                             <i class="fas fa-tshirt"></i>
                         </div>
-                        <span class="font-bold text-gray-800">Exclusive S4 Kit Unveiling</span>
+                        <span class="font-bold text-gray-800">25 Matches</span>
                     </li>
                 </ul>
             </div>
