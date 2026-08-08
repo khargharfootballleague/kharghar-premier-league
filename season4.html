@@ -132,13 +132,13 @@
                 <thead>
                     <tr class="bg-slate-900 text-white text-[11px] font-black tracking-wider uppercase">
                         <th class="p-4 pl-6 text-center w-12">Pos</th>
-                        <th class="p-4">Franchise</th>
+                        <th class="p-4">Team</th>
                         <th class="p-4 text-center w-12" title="Played">P</th>
                         <th class="p-4 text-center w-12" title="Won">W</th>
                         <th class="p-4 text-center w-12" title="Drawn">D</th>
                         <th class="p-4 text-center w-12" title="Lost">L</th>
-                        <th class="p-4 text-center w-12 hidden sm:table-cell" title="Goals For">GF</th>
-                        <th class="p-4 text-center w-12 hidden sm:table-cell" title="Goals Against">GA</th>
+                        <th class="p-4 text-center w-12" title="Goals For">GF</th>
+                        <th class="p-4 text-center w-12" title="Goals Against">GA</th>
                         <th class="p-4 text-center w-12" title="Goal Difference">GD</th>
                         <th class="p-4 pr-6 text-center w-16 text-amber-400">Pts</th>
                     </tr>
@@ -146,41 +146,41 @@
                 <tbody class="divide-y divide-gray-100 text-sm font-bold text-gray-700">
                     
                     <!-- 1st Place (Playoff Zone) -->
-                    <tr class="hover:bg-slate-50 transition bg-emerald-50/40">
+					<tr class="hover:bg-slate-50 transition bg-emerald-50/40">
                         <td class="p-4 pl-6 text-center">
                             <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs mx-auto shadow-sm">1</span>
                         </td>
                         <td class="p-4 flex items-center gap-3">
-                            <img src="img-team-logo/Wolves.png" class="w-8 h-8 object-contain" alt="Alpha Wolves" onerror="this.src='https://ui-avatars.com/api/?name=AW&background=0f172a&color=fff';">
-                            Alpha Wolves United FC
+                            <img src="img-team-logo/falcons.png" class="w-8 h-8 object-contain" alt="Falcons" onerror="this.src='https://ui-avatars.com/api/?name=FK&background=0f172a&color=fff';">
+                            Falcons
                         </td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
                         <td class="p-4 text-center text-gray-500">0</td>
                         <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
+                        <td class="p-4 text-center text-gray-500">6</td>
+						<td class="p-4 text-center text-gray-500">4</td>
+                        <td class="p-4 text-center text-gray-500">2</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">3</td>
                     </tr>
-
+					
                     <!-- 2nd Place (Playoff Zone) -->
-                    <tr class="hover:bg-slate-50 transition bg-emerald-50/40">
+					 <tr class="hover:bg-slate-50 transition">
                         <td class="p-4 pl-6 text-center">
                             <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs mx-auto shadow-sm">2</span>
                         </td>
                         <td class="p-4 flex items-center gap-3">
-                            <img src="img-team-logo/ATK.png" class="w-8 h-8 object-contain" alt="Atletico" onerror="this.src='https://ui-avatars.com/api/?name=AT&background=0f172a&color=fff';">
-                            Atletico de Kharghar FC
+                            <img src="img-team-logo/REAL.png" class="w-8 h-8 object-contain" alt="Real Kharghar" onerror="this.src='https://ui-avatars.com/api/?name=RK&background=0f172a&color=fff';">
+                            Real
                         </td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
                         <td class="p-4 text-center text-gray-500">0</td>
                         <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-						<td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
+                        <td class="p-4 text-center text-gray-500">3</td>
+						<td class="p-4 text-center text-gray-500">2</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-gray-400">3</td>
                     </tr>
 
                     <!-- 3rd Place (Playoff Zone) -->
@@ -189,85 +189,86 @@
                             <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs mx-auto shadow-sm">3</span>
                         </td>
                         <td class="p-4 flex items-center gap-3">
-                            <img src="img-team-logo/falcons.png" class="w-8 h-8 object-contain" alt="Falcons" onerror="this.src='https://ui-avatars.com/api/?name=FK&background=0f172a&color=fff';">
-                            Falcons Kharghar FC
+                            <img src="img-team-logo/KUFC.jpg" class="w-8 h-8 object-contain" alt="Kharghar United" onerror="this.src='https://ui-avatars.com/api/?name=KU&background=0f172a&color=fff';">
+                            United
                         </td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
                         <td class="p-4 text-center text-gray-500">0</td>
                         <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-						<td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
+                        <td class="p-4 text-center text-gray-500">2</td>
+						<td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">3</td>
                     </tr>
 
                     <!-- 4th Place (Playoff Zone) -->
-                    <tr class="hover:bg-slate-50 transition bg-emerald-50/40">
+					<tr class="hover:bg-slate-50 transition bg-emerald-50/40">
                         <td class="p-4 pl-6 text-center">
                             <span class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs mx-auto shadow-sm">4</span>
                         </td>
                         <td class="p-4 flex items-center gap-3">
-                            <img src="img-team-logo/KUFC.jpg" class="w-8 h-8 object-contain" alt="Kharghar United" onerror="this.src='https://ui-avatars.com/api/?name=KU&background=0f172a&color=fff';">
-                            Kharghar United FC
+                            <img src="img-team-logo/Wolves.png" class="w-8 h-8 object-contain" alt="Alpha Wolves" onerror="this.src='https://ui-avatars.com/api/?name=AW&background=0f172a&color=fff';">
+                            Wolves
                         </td>
+                        <td class="p-4 text-center text-gray-500">1</td>
                         <td class="p-4 text-center text-gray-500">0</td>
                         <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-						<td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 text-center text-gray-500">2</td>
+                        <td class="p-4 text-center text-gray-500">3</td>
+                        <td class="p-4 text-center text-gray-500">-1</td>
                         <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
                     </tr>
 
+                    
+
                     <!-- 5th Place (Elimination Zone) -->
-                    <tr class="hover:bg-slate-50 transition">
+					<tr class="hover:bg-slate-50 transition bg-emerald-50/40">
                         <td class="p-4 pl-6 text-center">
                             <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs mx-auto">5</span>
                         </td>
                         <td class="p-4 flex items-center gap-3">
-                            <img src="img-team-logo/mavknights.jpg" class="w-8 h-8 object-contain" alt="Mavericks" onerror="this.src='https://ui-avatars.com/api/?name=MK&background=0f172a&color=fff';">
-                            Mavericks Knights FC
+                            <img src="img-team-logo/ATK.png" class="w-8 h-8 object-contain" alt="Atletico" onerror="this.src='https://ui-avatars.com/api/?name=AT&background=0f172a&color=fff';">
+                            Atletico
                         </td>
+                        <td class="p-4 text-center text-gray-500">1</td>
                         <td class="p-4 text-center text-gray-500">0</td>
                         <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-						<td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 pr-6 text-center text-lg font-black text-gray-400">0</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 text-center text-gray-500">4</td>
+						<td class="p-4 text-center text-gray-500">6</td>
+                        <td class="p-4 text-center text-gray-500">-2</td>
+                        <td class="p-4 pr-6 text-center text-lg font-black text-[#2D9F94]">0</td>
                     </tr>
+                 
 
                     <!-- 6th Place (Elimination Zone) -->
-                    <tr class="hover:bg-slate-50 transition">
+					<tr class="hover:bg-slate-50 transition">
                         <td class="p-4 pl-6 text-center">
                             <span class="w-7 h-7 rounded-full bg-gray-200 text-gray-500 flex items-center justify-center text-xs mx-auto">6</span>
                         </td>
                         <td class="p-4 flex items-center gap-3">
-                            <img src="img-team-logo/REAL.png" class="w-8 h-8 object-contain" alt="Real Kharghar" onerror="this.src='https://ui-avatars.com/api/?name=RK&background=0f172a&color=fff';">
-                            Real Kharghar FC
+                            <img src="img-team-logo/mavknights.jpg" class="w-8 h-8 object-contain" alt="Mavericks" onerror="this.src='https://ui-avatars.com/api/?name=MK&background=0f172a&color=fff';">
+                            Mavericks
                         </td>
+                        <td class="p-4 text-center text-gray-500">1</td>
                         <td class="p-4 text-center text-gray-500">0</td>
                         <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
-						<td class="p-4 text-center text-gray-500">0</td>
-                        <td class="p-4 text-center text-gray-500">0</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+                        <td class="p-4 text-center text-gray-500">1</td>
+						<td class="p-4 text-center text-gray-500">2</td>
+                        <td class="p-4 text-center text-gray-500">-1</td>
                         <td class="p-4 pr-6 text-center text-lg font-black text-gray-400">0</td>
                     </tr>
-
+                   
                 </tbody>
             </table>
         
         <!-- Table Footer Legend -->
         <div class="bg-slate-50 p-4 border-t border-gray-100 text-[10px] text-gray-500 font-bold uppercase tracking-wider flex justify-center gap-8">
-            <span class="flex items-center gap-2"><div class="w-3 h-3 bg-emerald-500 rounded-sm"></div> Playoff Qualification</span>
-            <span class="flex items-center gap-2"><div class="w-3 h-3 bg-gray-300 rounded-sm"></div> Eliminated</span>
 			<a href="s4-schedule.html" class="flex items-center gap-2 bg-[#0f172a] text-white px-4 py-2 rounded-lg hover:bg-[#2D9F94] transition shadow-sm">
-                <i class="fas fa-chart-pie"></i> Schedule
+                <i class="fas fa-check-circle"></i> Schedule
             </a>
 			<a href="stats-fpl.html" class="flex items-center gap-2 bg-[#0f172a] text-white px-4 py-2 rounded-lg hover:bg-[#2D9F94] transition shadow-sm">
                 <i class="fas fa-chart-pie"></i> Stats
