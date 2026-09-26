@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kharghar Premier League — Season 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pitch: #0F3D2E;
+    --pitch-line: #1C5940;
+    --chalk: #F5F3EC;
+    --amber: #E8A33D;
+    --ink: #0B1F17;
+    --crowd: #6E8B7B;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html{ scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *{ box-sizing: border-box; }
+  body{
+    margin:0;
+    min-height:100%;
+    background: var(--pitch);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 2px, transparent 2px, transparent 46px),
+      linear-gradient(180deg, var(--pitch) 0%, var(--pitch-line) 140%);
+    color: var(--chalk);
+    font-family: 'Karla', sans-serif;
+    display:flex;
+    justify-content:center;
+    padding: 40px 18px 56px;
+  }
+  .wrap{ width:100%; max-width: 560px; }
+
+  .eyebrow{
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: var(--amber);
+    margin: 0 0 4px;
+  }
+  h1{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: clamp(46px, 12vw, 68px);
+    line-height: 0.92;
+    margin: 0 0 18px;
+    letter-spacing: 0.01em;
+  }
+  .rule{
+    height: 3px;
+    background: linear-gradient(90deg, var(--amber), transparent 75%);
+    margin-bottom: 28px;
+  }
+
+  .card{
+    background: var(--chalk);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 26px 24px 28px;
+    box-shadow: 0 24px 50px rgba(0,0,0,0.28);
+  }
+  label{
+    display:block;
+    font-size: 13px;
+    color: var(--crowd);
+    margin-bottom: 8px;
+  }
+  select{
+    width:100%;
+    font-family:'Karla', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--ink);
+    background: #fff;
+    border: 2px solid var(--pitch);
+    border-radius: 3px;
+    padding: 12px 14px;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--pitch) 50%), linear-gradient(135deg, var(--pitch) 50%, transparent 50%);
+    background-position: calc(100% - 22px) center, calc(100% - 16px) center;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+  }
+  select:focus, button:focus-visible{
+    outline: 3px solid var(--amber);
+    outline-offset: 2px;
+  }
+
+  button{
+    margin-top: 18px;
+    width:100%;
+    font-family:'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    background: var(--amber);
+    border: none;
+    border-radius: 3px;
+    padding: 14px 10px;
+    cursor:pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  button:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(232,163,61,0.35); }
+  button:disabled{ opacity: 0.6; cursor: progress; transform:none; box-shadow:none; }
+
+  .result{
+    margin-top: 26px;
+    border-top: 2px dashed var(--pitch-line);
+    padding-top: 22px;
+    display:none;
+  }
+  .result.show{ display:block; }
+
+  .player-name{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 0 0 16px;
+  }
+  .stat-row{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .stat{
+    background: var(--pitch);
+    color: var(--chalk);
+    border-radius: 3px;
+    padding: 14px 8px;
+    text-align:center;
+  }
+  .stat .num{
+    font-family:'Big Shoulders Display', sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--amber);
+    line-height:1;
+  }
+  .stat .lbl{
+    font-size: 12px;
+    color: var(--chalk);
+    margin-top: 6px;
+  }
+  .verdict{
+    font-style: italic;
+    color: var(--pitch-line);
+    line-height: 1.5;
+    min-height: 1.5em;
+  }
+  .verdict.loading::after{
+    content: '';
+  }
+
+  footer{
+    margin-top: 22px;
+    text-align:center;
+    font-size: 12px;
+    color: rgba(245,243,234,0.55);
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">FOOTBALL &nbsp;·&nbsp; SEVEN-A-SIDE &nbsp;·&nbsp; KHARGHAR</p>
+  <h1>Kharghar Premier<br>League</h1>
+  <div class="rule"></div>
+
+  <div class="card">
+    <label for="player-select">Pick a player</label>
+    <select id="player-select"></select>
+    <button id="fetch-btn" type="button">Get season stats</button>
+
+    <div class="result" id="result">
+      <p class="player-name" id="r-name"></p>
+      <div class="stat-row">
+        <div class="stat"><div class="num" id="r-goals">0</div><div class="lbl">Goals</div></div>
+        <div class="stat"><div class="num" id="r-assists">0</div><div class="lbl">Assists</div></div>
+        <div class="stat"><div class="num" id="r-points">0</div><div class="lbl">Points</div></div>
+      </div>
+      <p class="verdict" id="r-verdict"></p>
+    </div>
+  </div>
+
+  <footer>Season 4 · 66 players · generated live by Claude</footer>
+</div>
+
+<script>
+const PLAYERS = [{"name": "ABHAY SHINDE", "goals": 0, "assists": 0, "points": 0}, {"name": "Abhijit Shinde", "goals": 3, "assists": 4, "points": 28}, {"name": "Abhinav", "goals": 2, "assists": 3, "points": 32}, {"name": "Abhishek KD", "goals": 2, "assists": 1, "points": 23}, {"name": "Adarsh", "goals": 2, "assists": 4, "points": 25}, {"name": "ADIL", "goals": 1, "assists": 1, "points": 7}, {"name": "Aditya G", "goals": 7, "assists": 5, "points": 56}, {"name": "Akash Choudhary", "goals": 1, "assists": 5, "points": 49}, {"name": "Akash Kanturia", "goals": 0, "assists": 0, "points": 0}, {"name": "Akhil", "goals": 4, "assists": 3, "points": 31}, {"name": "Akshay Shetty", "goals": 7, "assists": 5, "points": 47}, {"name": "Amar B", "goals": 0, "assists": 0, "points": 3}, {"name": "Amey A", "goals": 0, "assists": 1, "points": 13}, {"name": "ANKIT MISHRA", "goals": 1, "assists": 0, "points": 10}, {"name": "ANTHONY PAUL", "goals": 3, "assists": 1, "points": 15}, {"name": "Ayan", "goals": 5, "assists": 1, "points": 26}, {"name": "Bikram", "goals": 2, "assists": 0, "points": 19}, {"name": "Darshan", "goals": 6, "assists": 3, "points": 51}, {"name": "Debanand M", "goals": 0, "assists": 0, "points": 2}, {"name": "Dexter", "goals": 6, "assists": 15, "points": 83}, {"name": "Dhananjay", "goals": 1, "assists": 3, "points": 43}, {"name": "Dhaval", "goals": 0, "assists": 0, "points": 3}, {"name": "Dinesh S", "goals": 0, "assists": 1, "points": 12}, {"name": "FAYAZ", "goals": 6, "assists": 4, "points": 40}, {"name": "Gaurav", "goals": 2, "assists": 0, "points": 44}, {"name": "GURJAN", "goals": 4, "assists": 2, "points": 23}, {"name": "Hardik Joshi", "goals": 1, "assists": 2, "points": 16}, {"name": "Hemant", "goals": 0, "assists": 0, "points": 20}, {"name": "HEMANT GHADGE", "goals": 0, "assists": 1, "points": 3}, {"name": "Hiralal", "goals": 0, "assists": 1, "points": 17}, {"name": "Ishtiyaque", "goals": 7, "assists": 1, "points": 40}, {"name": "jibin joy", "goals": 0, "assists": 1, "points": 3}, {"name": "JIgarr D", "goals": 1, "assists": 0, "points": 6}, {"name": "KIRAN GADAM", "goals": 12, "assists": 2, "points": 86}, {"name": "Kishan", "goals": 3, "assists": 2, "points": 23}, {"name": "Kunal", "goals": 0, "assists": 0, "points": 4}, {"name": "Madan T", "goals": 16, "assists": 8, "points": 104}, {"name": "Mayank", "goals": 2, "assists": 2, "points": 17}, {"name": "Mutum", "goals": 0, "assists": 3, "points": 32}, {"name": "Naren", "goals": 1, "assists": 2, "points": 11}, {"name": "Neal Thakur", "goals": 0, "assists": 1, "points": 7}, {"name": "Nitin", "goals": 0, "assists": 0, "points": 5}, {"name": "padam", "goals": 0, "assists": 0, "points": 4}, {"name": "Paddy", "goals": 4, "assists": 3, "points": 29}, {"name": "Prashant", "goals": 0, "assists": 0, "points": 14}, {"name": "Pratik", "goals": 2, "assists": 1, "points": 29}, {"name": "Rahul S", "goals": 0, "assists": 1, "points": 11}, {"name": "Raina", "goals": 0, "assists": 0, "points": 28}, {"name": "Ratish", "goals": 1, "assists": 1, "points": 15}, {"name": "Rituraj", "goals": 0, "assists": 0, "points": 0}, {"name": "Rohan", "goals": 0, "assists": 0, "points": 4}, {"name": "Ronik Shah", "goals": 4, "assists": 0, "points": 16}, {"name": "Sahil", "goals": 0, "assists": 0, "points": 37}, {"name": "Sai", "goals": 0, "assists": 0, "points": 13}, {"name": "Sanket g", "goals": 4, "assists": 5, "points": 35}, {"name": "Sanu", "goals": 1, "assists": 0, "points": 28}, {"name": "Satbir", "goals": 0, "assists": 1, "points": 16}, {"name": "Shazad", "goals": 0, "assists": 1, "points": 4}, {"name": "Siddharth", "goals": 3, "assists": 3, "points": 32}, {"name": "Sinu", "goals": 3, "assists": 2, "points": 27}, {"name": "Stephen", "goals": 3, "assists": 3, "points": 24}, {"name": "Suman", "goals": 0, "assists": 1, "points": 17}, {"name": "Umesh", "goals": 3, "assists": 1, "points": 13}, {"name": "Vijay S", "goals": 0, "assists": 0, "points": 3}, {"name": "Vishal F", "goals": 0, "assists": 3, "points": 9}, {"name": "Zahoor", "goals": 2, "assists": 0, "points": 18}];
+
+const sel = document.getElementById('player-select');
+PLAYERS.forEach((p, i) => {
+  const opt = document.createElement('option');
+  opt.value = i;
+  opt.textContent = p.name;
+  sel.appendChild(opt);
+});
+
+const btn = document.getElementById('fetch-btn');
+const resultBox = document.getElementById('result');
+const elName = document.getElementById('r-name');
+const elGoals = document.getElementById('r-goals');
+const elAssists = document.getElementById('r-assists');
+const elPoints = document.getElementById('r-points');
+const elVerdict = document.getElementById('r-verdict');
+
+let sampleFn = null;
+(async () => {
+  try { sampleFn = await claude.use('sample'); } catch (e) { sampleFn = null; }
+})();
+
+function fallbackLine(p){
+  if (p.points === 0) return "A quiet season with the numbers still to come.";
+  if (p.goals >= 10) return "A season to remember in front of goal.";
+  if (p.assists >= p.goals && p.assists >= 4) return "The season's quiet architect, always finding a teammate.";
+  return "A solid, consistent season for the squad.";
+}
+
+btn.addEventListener('click', async () => {
+  const p = PLAYERS[sel.value];
+  btn.disabled = true;
+  btn.textContent = 'Fetching…';
+
+  elName.textContent = p.name;
+  elGoals.textContent = p.goals;
+  elAssists.textContent = p.assists;
+  elPoints.textContent = p.points;
+  elVerdict.textContent = '';
+  resultBox.classList.add('show');
+
+  try {
+    if (!sampleFn) throw new Error('no sample');
+    const prompt = `You are a football league scoreboard announcer. A player named "${p.name}" finished Kharghar Premier League Season 4 with ${p.goals} goals, ${p.assists} assists, and ${p.points} total points. Write exactly one short, punchy sentence (under 20 words) summing up their season. No preamble, no quotes, just the sentence.`;
+    const res = await sampleFn(prompt, { modelTier: 'quick' });
+    elVerdict.textContent = (res && res.text ? res.text.trim() : fallbackLine(p));
+  } catch (e) {
+    elVerdict.textContent = fallbackLine(p);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Get season stats';
+  }
+});
+</script>
+</body>
+</html>
